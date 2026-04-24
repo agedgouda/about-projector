@@ -1,0 +1,10 @@
+name: 'Jeff Kaufman'
+super: true
+id: 5269116a-a988-499a-88c0-6cc8ba51074a
+password_hash: $2y$12$akx6ASncsBT3D9rJBoUF0ekVoDLbYbmeuNZle3/RCNFB4.0zbPep2
+preferences:
+  collections:
+    pages:
+      view: tree
+    blog:
+      view: list

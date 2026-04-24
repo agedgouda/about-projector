@@ -1,0 +1,96 @@
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+
+          -
+            handle: sections
+            field:
+              type: replicator
+              display: Sections
+              sets:
+
+                hero:
+                  display: Hero
+                  fields:
+                    - handle: headline
+                      field:
+                        type: text
+                    - handle: subhead
+                      field:
+                        type: textarea
+                    - handle: cta_text
+                      field:
+                        type: text
+                    - handle: image
+                      field:
+                        type: assets
+                        max_files: 1
+
+                features:
+                  display: Features
+                  fields:
+                    - handle: items
+                      field:
+                        type: grid
+                        fields:
+                          - handle: title
+                            field:
+                              type: text
+                          - handle: description
+                            field:
+                              type: textarea
+
+                how_it_works:
+                  display: How It Works
+                  fields:
+                    - handle: steps
+                      field:
+                        type: grid
+                        fields:
+                          - handle: title
+                            field:
+                              type: text
+                          - handle: description
+                            field:
+                              type: textarea
+
+                demo_block:
+                  display: Demo Block
+                  fields: []
+
+                testimonials:
+                  display: Testimonials
+                  fields:
+                    - handle: quotes
+                      field:
+                        type: grid
+                        fields:
+                          - handle: quote
+                            field:
+                              type: textarea
+                          - handle: author
+                            field:
+                              type: text
+
+                pricing_preview:
+                  display: Pricing Preview
+                  fields: []
+
+                final_cta:
+                  display: Final CTA
+                  fields:
+                    - handle: headline
+                      field:
+                        type: text
+                    - handle: cta_text
+                      field:
+                        type: text

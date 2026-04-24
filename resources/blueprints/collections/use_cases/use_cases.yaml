@@ -1,0 +1,36 @@
+title: 'Use Case'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      required: true
+      localizable: true
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content
+      localizable: true
+  -
+    handle: summary
+    field:
+      type: textarea
+      display: Summary
+      localizable: true
+  -
+    handle: author
+    field:
+      type: users
+      display: Author
+      default: current
+      max_items: 1
+      localizable: true
+  -
+    handle: featured_image
+    field:
+      type: assets
+      display: 'Featured Image'
+      container: assets
+      max_files: 1

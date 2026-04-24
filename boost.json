@@ -1,0 +1,9 @@
+{
+    "environment": "statamic",
+    "exclude_guidelines": [
+        "inertia-laravel",
+        "inertia-react",
+        "inertia-vue",
+        "inertia-svelte"
+    ]
+}

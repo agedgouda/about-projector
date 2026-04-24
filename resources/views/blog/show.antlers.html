@@ -1,0 +1,23 @@
+<article class="mx-auto max-w-3xl px-6 py-16">
+
+  {{ if featured_image }}
+    <img src="{{ featured_image:url }}" alt="{{ title }}" class="w-full rounded-2xl object-cover max-h-96 mb-10">
+  {{ /if }}
+
+  <header class="mb-10">
+    <time class="text-sm text-zinc-400">{{ date format="F j, Y" }}</time>
+    <h1 class="text-4xl font-bold text-zinc-900 mt-2 mb-4">{{ title }}</h1>
+    {{ if author }}
+      <p class="text-sm text-zinc-500">By {{ author:name }}</p>
+    {{ /if }}
+  </header>
+
+  <div class="prose prose-zinc max-w-none">
+    {{ content }}
+  </div>
+
+  <div class="mt-12 pt-8 border-t border-zinc-200">
+    <a href="/blog" class="text-sm font-medium text-indigo-600 hover:text-indigo-700">← Back to Blog</a>
+  </div>
+
+</article>

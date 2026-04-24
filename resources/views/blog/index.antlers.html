@@ -1,0 +1,16 @@
+<div class="mx-auto max-w-4xl px-6 py-16">
+  <h1 class="text-4xl font-bold text-zinc-900 mb-12">Blog</h1>
+
+  {{ collection:blog sort="date:desc" }}
+    <article class="mb-10 pb-10 border-b border-zinc-200 last:border-0">
+      <time class="text-sm text-zinc-400">{{ date format="F j, Y" }}</time>
+      <h2 class="text-2xl font-semibold text-zinc-900 mt-1 mb-2">
+        <a href="{{ url }}" class="hover:text-indigo-600 transition-colors">{{ title }}</a>
+      </h2>
+      {{ if excerpt }}
+        <p class="text-zinc-500 leading-relaxed">{{ excerpt }}</p>
+      {{ /if }}
+      <a href="{{ url }}" class="inline-block mt-4 text-sm font-medium text-indigo-600 hover:text-indigo-700">Read more →</a>
+    </article>
+  {{ /collection:blog }}
+</div>

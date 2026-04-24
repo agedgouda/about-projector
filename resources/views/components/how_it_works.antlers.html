@@ -1,0 +1,16 @@
+<section class="py-24 px-6 bg-white">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-3xl font-bold text-zinc-900 text-center mb-16">How It Works</h2>
+    <ol class="space-y-10">
+      {{ steps }}
+        <li class="flex gap-6 items-start">
+          <span class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white text-sm font-bold flex items-center justify-center">{{ count }}</span>
+          <div>
+            <h3 class="text-lg font-semibold text-zinc-900 mb-1">{{ title }}</h3>
+            <p class="text-zinc-500 leading-relaxed">{{ description }}</p>
+          </div>
+        </li>
+      {{ /steps }}
+    </ol>
+  </div>
+</section>

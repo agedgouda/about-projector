@@ -1,0 +1,14 @@
+<section class="bg-white py-24 px-6 text-center">
+  <div class="mx-auto max-w-3xl">
+    {{ if image }}
+      <img src="{{ image:url }}" alt="" class="mx-auto mb-10 max-h-64 w-full object-cover rounded-2xl">
+    {{ /if }}
+    <h1 class="text-5xl font-bold tracking-tight text-zinc-900 mb-6">{{ headline }}</h1>
+    {{ if subhead }}
+      <p class="text-xl text-zinc-500 mb-10">{{ subhead }}</p>
+    {{ /if }}
+    {{ if cta_text }}
+      <a href="/signup" class="inline-block rounded-lg bg-indigo-600 px-8 py-3 text-base font-semibold text-white hover:bg-indigo-700 transition-colors">{{ cta_text }}</a>
+    {{ /if }}
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="py-24 px-6 bg-white">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-3xl font-bold text-zinc-900 text-center mb-16">What Our Users Say</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {{ quotes }}
+        <figure class="rounded-2xl bg-zinc-50 p-8 ring-1 ring-zinc-200">
+          <blockquote class="text-zinc-600 leading-relaxed mb-6">"{{ quote }}"</blockquote>
+          <figcaption class="text-sm font-semibold text-zinc-900">— {{ author }}</figcaption>
+        </figure>
+      {{ /quotes }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+title: Page
+fields:
+  -
+    handle: sections
+    field:
+      type: replicator
+      display: Sections
+      sets:
+        hero:
+          display: Hero
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+            -
+              handle: subhead
+              field:
+                type: textarea
+                display: Subhead
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'CTA Text'
+            -
+              handle: image
+              field:
+                type: assets
+                display: Image
+                max_files: 1
+        features:
+          display: Features
+          fields:
+            -
+              handle: items
+              field:
+                type: grid
+                display: Items
+                fields:
+                  -
+                    handle: title
+                    field:
+                      type: text
+                      display: Title
+                  -
+                    handle: description
+                    field:
+                      type: textarea
+                      display: Description
+        how_it_works:
+          display: 'How It Works'
+          fields:
+            -
+              handle: steps
+              field:
+                type: grid
+                display: Steps
+                fields:
+                  -
+                    handle: title
+                    field:
+                      type: text
+                      display: Title
+                  -
+                    handle: description
+                    field:
+                      type: textarea
+                      display: Description
+        demo_block:
+          display: 'Demo Block'
+          fields: []
+        testimonials:
+          display: Testimonials
+          fields: []
+        pricing_preview:
+          display: 'Pricing Preview'
+          fields: []
+        final_cta:
+          display: 'Final CTA'
+          fields: []
