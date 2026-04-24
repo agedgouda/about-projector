@@ -1,6 +1,6 @@
-# Content created via the CP — managed on the server, not in git
-/content/collections/
-/content/taxonomies/
+# Entry files and taxonomy terms are managed in the DB, not git
+/content/collections/*/
+/content/taxonomies/*/
 
 *.log
 .DS_Store

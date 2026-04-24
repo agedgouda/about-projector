@@ -42,7 +42,7 @@ return [
 
     'entries' => [
         'driver' => 'eloquent',
-        'model' => \Statamic\Eloquent\Entries\EntryModel::class,
+        'model' => \App\Models\EntryModel::class,
         'entry' => \Statamic\Eloquent\Entries\Entry::class,
         'map_data_to_columns' => false,
     ],
