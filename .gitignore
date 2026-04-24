@@ -1,3 +1,7 @@
+# Content created via the CP — managed on the server, not in git
+/content/collections/
+/content/taxonomies/
+
 *.log
 .DS_Store
 .env
