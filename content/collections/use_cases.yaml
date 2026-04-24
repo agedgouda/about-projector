@@ -1,4 +1,0 @@
-title: 'Use Cases'
-template: use_cases/show
-revisions: false
-route: 'use-cases/{slug}'
