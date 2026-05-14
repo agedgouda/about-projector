@@ -3,6 +3,7 @@ fields:
   -
     handle: content
     field:
-      type: markdown
+      type: bard
       display: Content
       localizable: true
+      save_html: true
