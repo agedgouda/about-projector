@@ -73,12 +73,12 @@ return [
     ],
 
     'navigations' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\NavModel::class,
     ],
 
     'navigation_trees' => [
-        'driver' => 'eloquent',
+        'driver' => 'file',
         'model' => \Statamic\Eloquent\Structures\TreeModel::class,
         'tree' => \Statamic\Eloquent\Structures\NavTree::class,
     ],
