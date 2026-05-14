@@ -10,7 +10,7 @@ tree:
     url: /#pricing
   -
     title: About
-    url: /#about
+    url: /about
   -
     title: Contact
     url: /#contact
