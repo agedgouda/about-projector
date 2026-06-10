@@ -2,3 +2,29 @@
 @plugin "@tailwindcss/typography";
 @source "../views";
 @source "../../content";
+
+@theme {
+  --color-projector-highlight-50: #fef7f0;
+  --color-projector-highlight-100: #fdecdd;
+  --color-projector-highlight-200: #fad6b7;
+  --color-projector-highlight-300: #f7b782;
+  --color-projector-highlight-400: #f4984b;
+  --color-projector-highlight-500: #f07b19;
+  --color-projector-highlight-600: #dd6c0e;
+  --color-projector-highlight-700: #c25f0c;
+  --color-projector-highlight-800: #864209;
+  --color-projector-highlight-900: #562a06;
+  --color-projector-highlight-950: #391c04;
+
+  --color-projector-primary-50: #fdf4f1;
+  --color-projector-primary-100: #fbe4df;
+  --color-projector-primary-200: #f8c5ba;
+  --color-projector-primary-300: #f29b87;
+  --color-projector-primary-400: #ee795d;
+  --color-projector-primary-500: #e84924;
+  --color-projector-primary-600: #c63615;
+  --color-projector-primary-700: #9d2b10;
+  --color-projector-primary-800: #73200c;
+  --color-projector-primary-900: #4e1508;
+  --color-projector-primary-950: #370f06;
+}

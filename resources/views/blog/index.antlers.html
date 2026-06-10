@@ -5,12 +5,12 @@
     <article class="mb-10 pb-10 border-b border-zinc-200 last:border-0">
       <time class="text-sm text-zinc-400">{{ date format="F j, Y" }}</time>
       <h2 class="text-2xl font-semibold text-zinc-900 mt-1 mb-2">
-        <a href="{{ url }}" class="hover:text-indigo-600 transition-colors">{{ title }}</a>
+        <a href="{{ url }}" class="hover:text-projector-primary-600 transition-colors">{{ title }}</a>
       </h2>
       {{ if excerpt }}
         <p class="text-zinc-500 leading-relaxed">{{ excerpt }}</p>
       {{ /if }}
-      <a href="{{ url }}" class="inline-block mt-4 text-sm font-medium text-indigo-600 hover:text-indigo-700">Read more →</a>
+      <a href="{{ url }}" class="inline-block mt-4 text-sm font-medium text-projector-primary-600 hover:text-projector-primary-700">Read more →</a>
     </article>
   {{ /collection:blog }}
 </div>
