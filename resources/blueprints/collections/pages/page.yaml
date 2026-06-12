@@ -73,9 +73,16 @@ fields:
                     field:
                       type: textarea
                       display: Description
-        demo_block:
-          display: 'Demo Block'
-          fields: []
+        demo:
+          display: Demo
+          fields:
+            -
+              handle: image
+              field:
+                type: assets
+                display: Image
+                container: assets
+                max_files: 1
         testimonials:
           display: Testimonials
           fields: []

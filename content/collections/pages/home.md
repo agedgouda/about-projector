@@ -37,6 +37,8 @@ sections:
         description: 'Converts Zoom, Google Meet, MS Teams meeting transcripts into actionable items customized for your company’s way of doing business'
   -
     type: demo
+    image:
+      - demo-screenshot.png
   -
     type: testimonials
     quotes:

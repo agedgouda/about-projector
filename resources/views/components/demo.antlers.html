@@ -1,7 +1,39 @@
 <section class="py-24 px-6 bg-zinc-50">
   <div class="mx-auto max-w-4xl text-center">
     <h2 class="text-3xl font-bold text-zinc-900 mb-10">See It In Action</h2>
-    <div id="demo-app" class="rounded-2xl bg-zinc-200 aspect-video flex items-center justify-center text-zinc-400 text-lg ring-1 ring-zinc-300"></div>
+    {{ if image }}
+      <img src="{{ image:url }}" alt="" class="rounded-2xl w-full ring-1 ring-zinc-200 shadow-sm">
+    {{ else }}
+      <div id="demo-app" class="rounded-2xl bg-white ring-1 ring-zinc-200 shadow-sm overflow-hidden text-left">
+        <div class="flex items-center gap-2 border-b border-zinc-200 bg-zinc-50 px-4 py-3">
+          <span class="h-3 w-3 rounded-full bg-projector-primary-400"></span>
+          <span class="h-3 w-3 rounded-full bg-projector-highlight-400"></span>
+          <span class="h-3 w-3 rounded-full bg-zinc-300"></span>
+          <span class="ml-2 text-sm font-medium text-zinc-500">Projector — Sprint Board</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 p-6">
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wide text-zinc-400 mb-3">To Do</h3>
+            <div class="space-y-2">
+              <div class="rounded-lg bg-zinc-50 ring-1 ring-zinc-200 p-3 text-sm text-zinc-700">Draft proposal for Acme Co.</div>
+              <div class="rounded-lg bg-zinc-50 ring-1 ring-zinc-200 p-3 text-sm text-zinc-700">Send follow-up email</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wide text-zinc-400 mb-3">In Progress</h3>
+            <div class="space-y-2">
+              <div class="rounded-lg bg-projector-highlight-50 ring-1 ring-projector-highlight-200 p-3 text-sm text-zinc-700">Review Q3 budget</div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-wide text-zinc-400 mb-3">Done</h3>
+            <div class="space-y-2">
+              <div class="rounded-lg bg-projector-primary-50 ring-1 ring-projector-primary-200 p-3 text-sm text-zinc-400 line-through">Kickoff meeting notes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{ /if }}
     <div class="mt-10">
       <a href="/demo" class="inline-block rounded-lg bg-projector-primary-600 px-8 py-3 text-base font-semibold text-white hover:bg-projector-primary-700 transition-colors">Request a Demo</a>
     </div>
