@@ -1,8 +1,9 @@
-<section class="bg-white py-24 px-6 text-center">
+<section class="bg-gradient-to-b from-projector-highlight-50 via-white to-white py-24 px-6 text-center">
   <div class="mx-auto max-w-3xl">
     {{ if image }}
       <img src="{{ image:url }}" alt="" class="mx-auto mb-10 max-h-64 w-full object-cover rounded-2xl">
     {{ /if }}
+    <span class="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-sm font-medium text-projector-primary-700 ring-1 ring-projector-primary-200 shadow-sm mb-6">AI-Powered Project Management</span>
     <h1 class="text-5xl font-bold tracking-tight text-zinc-900 mb-6">{{ headline }}</h1>
     {{ if subhead }}
       <p class="text-xl text-zinc-500 mb-10">{{ subhead }}</p>
@@ -10,5 +11,15 @@
     {{ if cta_text }}
       <a href="https://projecthq.app/register" class="inline-block rounded-lg bg-projector-primary-600 px-8 py-3 text-base font-semibold text-white hover:bg-projector-primary-700 transition-colors">{{ cta_text }}</a>
     {{ /if }}
+    <div class="mt-16 pt-8 border-t border-zinc-200/70">
+      <p class="text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-4">Works with the tools your team already uses</p>
+      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-zinc-500">
+        <span>Zoom</span>
+        <span>Google Meet</span>
+        <span>Microsoft Teams</span>
+        <span>Slack</span>
+        <span>Email</span>
+      </div>
+    </div>
   </div>
 </section>
