@@ -13,7 +13,7 @@ tree:
     url: /about
   -
     title: Contact
-    url: /#contact
+    url: /contact
   -
     title: Blog
     url: /blog

@@ -7,9 +7,9 @@ sections:
     id: fSBQq-Ru1swz3GyiLr1t4
     type: hero
     enabled: true
-    subhead: 'The project management tool that does the paperwork.'
-    cta_text: 'Stop taking notes. Start taking action.'
-    headline: 'Application Name'
+    subhead: 'The project management tool that does the paperwork — so you can stop taking notes and start taking action.'
+    cta_text: 'Get Started'
+    headline: Projector
   -
     type: how_it_works
     steps:
@@ -24,6 +24,7 @@ sections:
         description: 'Tasks are dynamically displayed on a project board"'
   -
     type: features
+    anchor: product
     items:
       -
         title: 'Contextual Awareness'

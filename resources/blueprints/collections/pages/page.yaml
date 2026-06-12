@@ -34,6 +34,11 @@ fields:
           display: Features
           fields:
             -
+              handle: anchor
+              field:
+                type: hidden
+                default: product
+            -
               handle: items
               field:
                 type: grid
