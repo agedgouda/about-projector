@@ -85,7 +85,23 @@ fields:
                 max_files: 1
         testimonials:
           display: Testimonials
-          fields: []
+          fields:
+            -
+              handle: quotes
+              field:
+                type: grid
+                display: Quotes
+                fields:
+                  -
+                    handle: quote
+                    field:
+                      type: textarea
+                      display: Quote
+                  -
+                    handle: author
+                    field:
+                      type: text
+                      display: Author
         pricing_preview:
           display: 'Pricing Preview'
           fields: []
