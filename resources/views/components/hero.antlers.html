@@ -1,21 +1,12 @@
 <section class="relative bg-cover bg-center min-h-[580px] flex items-center" style="background-image: url('{{ if image }}{{ image:url }}{{ else }}/assets/hero-bg.png{{ /if }}')">
-  <div class="absolute inset-0 bg-black/60"></div>
-  <div class="relative z-10 mx-auto max-w-4xl px-6 py-24 text-center w-full">
-    <span class="inline-flex items-center rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm font-medium text-white mb-8 tracking-wide">AI-Powered Project Management</span>
-    <h1 class="text-5xl font-bold tracking-tight text-white mb-6 uppercase">{{ headline }}</h1>
+<div class="relative z-10 mx-auto max-w-6xl px-6 py-24 text-center w-full">
     {{ if subhead }}
-      <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">{{ subhead }}</p>
+      <p class="text-5xl font-bold text-black mb-6 whitespace-nowrap">{{ subhead }}</p>
     {{ /if }}
+    <h1 class="text-5xl font-bold tracking-tight text-black mb-6 uppercase">{{ headline }}</h1>
     {{ if cta_text }}
-      <a href="https://projecthq.app/register" class="inline-block rounded-lg bg-projector-primary-600 px-8 py-3 text-base font-semibold text-white hover:bg-projector-primary-700 transition-colors">{{ cta_text }}</a>
+      <a href="https://projecthq.app/register" class="inline-block rounded-2xl bg-projector-primary-600 px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
     {{ /if }}
-    <div class="mt-16 pt-8 border-t border-white/20">
-      <p class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Works with the tools your team already uses</p>
-      <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-white/70">
-        <span>Zoom</span>
-        <span>Google Meet</span>
-        <span>Microsoft Teams</span>
-      </div>
-    </div>
+    <p class="mt-8 text-sm font-bold text-black tracking-wide">AI-Powered Project Management</p>
   </div>
 </section>
