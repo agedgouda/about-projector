@@ -28,7 +28,8 @@ fields:
               handle: image
               field:
                 type: assets
-                display: Image
+                display: Background Image
+                container: assets
                 max_files: 1
         features:
           display: Features

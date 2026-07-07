@@ -17,18 +17,21 @@
 
 <body class="bg-white text-zinc-900 antialiased">
 
-  <header class="border-b border-zinc-200">
-    <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center gap-8">
-      <a href="/" class="flex items-center gap-2 font-semibold text-lg text-zinc-900 hover:text-projector-primary-600">
-        <img src="/logo.png" alt="" class="h-8 w-8">
-        Projector
+  <header class="bg-black">
+    <nav class="mx-auto max-w-6xl px-6 h-20 flex items-center gap-8">
+      <a href="/" class="flex items-center gap-3 shrink-0">
+        <img src="/logo.png" alt="" class="h-10 w-10">
+        <div class="flex flex-col leading-tight">
+          <span class="text-base font-bold tracking-widest uppercase text-white">Projector</span>
+          <span class="text-[10px] tracking-widest uppercase text-zinc-400">Every Project in Focus</span>
+        </div>
       </a>
       {{ nav:main }}
-        <a href="{{ url }}" class="text-sm text-zinc-600 hover:text-projector-primary-600 font-medium">{{ title }}</a>
+        <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">{{ title }}</a>
       {{ /nav:main }}
-      <div class="ml-auto flex items-center gap-4">
-        <a href="https://projecthq.app/register" class="text-sm font-medium text-zinc-600 hover:text-projector-primary-600">Register</a>
-        <a href="https://projecthq.app/login" class="rounded-lg bg-projector-primary-600 px-4 py-2 text-sm font-semibold text-white hover:bg-projector-primary-700 transition-colors">Log in</a>
+      <div class="ml-auto flex items-center gap-4 shrink-0">
+        <a href="https://projecthq.app/register" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">Get Started &rarr;</a>
+        <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white hover:bg-projector-primary-600 transition-colors">Login</a>
       </div>
     </nav>
   </header>
