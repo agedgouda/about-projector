@@ -1,19 +1,21 @@
 tree:
   -
+    id: 755eae67-f113-43ab-99d9-a2afee270f42
     title: Product
-    url: /#product
+    url: '/#product'
   -
+    id: 4eaa22a7-6e50-4e97-84f8-c375a5ea7de1
     title: Demo
-    url: /#demo
+    url: '/#demo'
   -
+    id: d98961b7-6169-4ee7-b429-75b554ab457c
     title: Pricing
-    url: /#pricing
+    url: '/#pricing'
   -
+    id: 8d283e45-57a3-4645-b829-ac5c27d90e56
     title: About
     url: /about
   -
+    id: 60bd7002-403b-4b91-8e66-e93ec8d4f984
     title: Contact
     url: /contact
-  -
-    title: Blog
-    url: /blog
