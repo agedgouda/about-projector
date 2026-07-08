@@ -12,13 +12,16 @@
   <meta property="og:image" content="{{ config:app:url }}/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ config:app:url }}/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   {{ vite src="resources/js/site.js|resources/css/site.css" }}
 </head>
 
 <body class="bg-white text-zinc-900 antialiased">
 
   <header class="bg-black">
-    <nav class="mx-auto max-w-6xl px-6 h-20 flex items-center gap-8">
+    <nav class="px-6 h-20 flex items-center gap-8">
       <a href="/" class="flex items-center gap-3 shrink-0">
         <img src="/logo.png" alt="" class="h-10 w-10">
         <div class="flex flex-col leading-tight">
@@ -26,14 +29,37 @@
           <span class="text-[10px] tracking-widest uppercase text-zinc-400">Every Project in Focus</span>
         </div>
       </a>
-      {{ nav:main }}
-        <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">{{ title }}</a>
-      {{ /nav:main }}
-      <div class="ml-auto flex items-center gap-4 shrink-0">
+      <div class="ml-auto hidden md:flex items-center gap-8">
+        {{ nav:main }}
+          <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">{{ title }}</a>
+        {{ /nav:main }}
+      </div>
+      <div class="hidden md:flex items-center gap-4 shrink-0">
         <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white hover:bg-projector-primary-600 transition-colors">Login</a>
         <a href="https://projecthq.app/register" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-black hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
       </div>
+      <button id="mobile-menu-btn" class="md:hidden ml-auto text-white p-2" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
     </nav>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800">
+      <div class="px-6 py-4 flex flex-col gap-4">
+        {{ nav:main }}
+          <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">{{ title }}</a>
+        {{ /nav:main }}
+        <div class="pt-2 flex flex-col gap-3">
+          <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white text-center hover:bg-projector-primary-600 transition-colors">Login</a>
+          <a href="https://projecthq.app/register" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-black text-center hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+    </script>
   </header>
 
   <main>

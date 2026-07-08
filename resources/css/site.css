@@ -4,6 +4,7 @@
 @source "../../content";
 
 @theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
   --color-projector-highlight-50: #fef7f0;
   --color-projector-highlight-100: #fdecdd;
   --color-projector-highlight-200: #fad6b7;
