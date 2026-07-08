@@ -1,9 +1,15 @@
-<section class="pt-14 px-6 bg-zinc-50">
-  <div class="mx-auto max-w-4xl text-center">
-    <h2 class="text-3xl font-bold text-zinc-900 mb-10">See It In Action</h2>
-    <img src="{{ if image }}{{ image:url }}{{ else }}/assets/demo-screenshot.png{{ /if }}" alt="" class="rounded-2xl w-full ring-1 ring-zinc-200 shadow-sm">
-    <div class="mt-10">
-      <a href="https://calendly.com/jeffakaufman/projector-demo" target="_blank" class="inline-block rounded-lg bg-projector-primary-600 px-8 py-3 text-base font-semibold text-white hover:bg-projector-primary-700 transition-colors">Request a Demo</a>
+<section class="px-16 py-14 bg-projector-primary-600">
+  <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
+    <div class="flex flex-col flex-1">
+      <h2 class="text-3xl font-semibold uppercase text-white">See It In Action</h2>
+      {{ if description }}
+        <p class="text-white/90 text-sm leading-relaxed mt-12">{{ description }}</p>
+      {{ /if }}
+      <a href="https://calendly.com/jeffakaufman/projector-demo" target="_blank" class="hidden md:inline-block self-start mt-auto rounded-2xl bg-black px-10 py-3 text-base font-semibold text-white hover:bg-zinc-800 transition-colors">Request a Demo</a>
+    </div>
+    <div class="shrink-0 ml-auto md:max-w-2xl">
+      <img src="{{ if image }}{{ image:url }}{{ else }}/assets/demo-screenshot.png{{ /if }}" alt="" class="rounded-2xl w-full h-auto shadow-sm">
     </div>
   </div>
+  <a href="https://calendly.com/jeffakaufman/projector-demo" target="_blank" class="md:hidden mt-14 block mx-auto w-fit rounded-2xl bg-black px-10 py-3 text-base font-semibold text-white hover:bg-zinc-800 transition-colors">Request a Demo</a>
 </section>

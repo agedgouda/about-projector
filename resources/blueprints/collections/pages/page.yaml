@@ -84,6 +84,11 @@ fields:
                 display: Image
                 container: assets
                 max_files: 1
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
         testimonials:
           display: Testimonials
           fields:
@@ -108,4 +113,24 @@ fields:
           fields: []
         final_cta:
           display: 'Final CTA'
-          fields: []
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'CTA Text'
+            -
+              handle: cta_url
+              field:
+                type: text
+                display: 'CTA URL'

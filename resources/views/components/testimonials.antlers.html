@@ -1,23 +1,52 @@
-<section class="pt-14 px-6 bg-white">
-  <div class="mx-auto max-w-5xl">
-    <h2 class="text-3xl font-bold text-zinc-900 text-center mb-12">What Our Users Say</h2>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {{ quotes }}
-        <figure class="rounded-2xl bg-zinc-50 p-8 ring-1 ring-zinc-200">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-8 w-8 text-projector-highlight-300 mb-4">
-            <path d="M7.17 6.17A6.5 6.5 0 0 0 4 12v6h6v-6H6.5a4 4 0 0 1 2.5-3.7l-1.83-2.13Zm10 0A6.5 6.5 0 0 0 14 12v6h6v-6h-3.5a4 4 0 0 1 2.5-3.7L17.17 6.17Z" />
-          </svg>
-          <blockquote class="text-zinc-600 leading-relaxed mb-6">{{ quote }}</blockquote>
-          <figcaption class="flex items-center gap-3">
-            <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-projector-primary-100 text-projector-primary-700">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+<section class="pt-14 px-16 pb-14 bg-white">
+  <h2 class="text-3xl font-semibold uppercase text-zinc-900 mb-12">What Our Users Say</h2>
+
+  <div class="relative flex items-center justify-center gap-16">
+    <button id="testimonial-prev" class="flex-shrink-0 p-1 text-zinc-400 hover:text-zinc-900 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+
+    <div class="overflow-hidden w-full max-w-2xl">
+      <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
+        {{ quotes }}
+          <div class="w-full flex-shrink-0">
+            <figure>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-8 w-8 text-projector-highlight-300 mb-4">
+                <path d="M7.17 6.17A6.5 6.5 0 0 0 4 12v6h6v-6H6.5a4 4 0 0 1 2.5-3.7l-1.83-2.13Zm10 0A6.5 6.5 0 0 0 14 12v6h6v-6h-3.5a4 4 0 0 1 2.5-3.7L17.17 6.17Z" />
               </svg>
-            </span>
-            <span class="text-sm font-semibold text-zinc-900">{{ author }}</span>
-          </figcaption>
-        </figure>
-      {{ /quotes }}
+              <blockquote class="text-zinc-600 leading-relaxed mb-6 text-lg">{{ quote }}</blockquote>
+              <figcaption class="flex items-center gap-2">
+                <span class="text-zinc-400">—</span>
+                <span class="text-sm font-semibold text-zinc-900">{{ author }}</span>
+              </figcaption>
+            </figure>
+          </div>
+        {{ /quotes }}
+      </div>
     </div>
+
+    <button id="testimonial-next" class="flex-shrink-0 p-1 text-zinc-400 hover:text-zinc-900 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    </button>
   </div>
+
+  <script>
+    (function () {
+      var track = document.getElementById('testimonial-track');
+      var total = track.children.length;
+      var current = 0;
+
+      function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      }
+
+      document.getElementById('testimonial-prev').addEventListener('click', function () { goTo(current - 1); });
+      document.getElementById('testimonial-next').addEventListener('click', function () { goTo(current + 1); });
+    })();
+  </script>
 </section>
