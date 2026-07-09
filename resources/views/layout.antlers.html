@@ -20,7 +20,7 @@
 
 <body class="bg-white text-zinc-900 antialiased">
 
-  <header class="bg-black">
+  <header id="site-header" class="sticky top-0 z-50 bg-black transition-colors duration-300">
     <nav class="px-6 h-20 flex items-center gap-8">
       <a href="/" class="flex items-center gap-3 shrink-0">
         <img src="/logo.png" alt="" class="h-10 w-10">
@@ -72,5 +72,21 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var header = document.getElementById('site-header');
+      function update() {
+        if (window.scrollY > 10) {
+          header.classList.remove('bg-black');
+          header.classList.add('bg-black/75');
+        } else {
+          header.classList.add('bg-black');
+          header.classList.remove('bg-black/75');
+        }
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>
