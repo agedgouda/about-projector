@@ -87,7 +87,7 @@ fields:
             -
               handle: description
               field:
-                type: textarea
+                type: markdown
                 display: Description
         testimonials:
           display: Testimonials
