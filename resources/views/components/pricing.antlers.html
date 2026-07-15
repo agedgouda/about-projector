@@ -2,27 +2,20 @@
   <h2 class="text-3xl font-semibold uppercase text-white mb-12">Simple Pricing</h2>
   <div class="mx-auto max-w-4xl">
     <div class="grid gap-24 sm:grid-cols-2 max-w-3xl mx-auto">
-      <div class="rounded-2xl bg-projector-primary-600 p-12 shadow-sm text-center">
-        <h3 class="text-xl font-bold uppercase tracking-wide text-white">Starter Plan</h3>
-        <h3 class="text-base font-semibold uppercase text-white mt-1">Free</h3>
-        <div class="text-xs text-white uppercase tracking-widest mt-6 space-y-1">
-            <p>One User</p>
-            <p>Three Projects</p>
-            <p>25 Documents Processed/Month</p>
+      {{ plans }}
+        <div class="rounded-2xl bg-projector-primary-600 p-12 shadow-sm text-center">
+          <h3 class="text-xl font-bold uppercase tracking-wide text-white">{{ name }}</h3>
+          <h3 class="text-base font-semibold uppercase text-white mt-1">{{ price }}</h3>
+          <div class="text-xs text-white uppercase tracking-widest mt-6 space-y-1">
+            {{ features }}
+              <p>{{ feature }}</p>
+            {{ /features }}
+          </div>
         </div>
-      </div>
-      <div class="rounded-2xl bg-projector-primary-600 p-12 shadow-sm text-center">
-        <h3 class="text-xl font-bold uppercase tracking-wide text-white">Pro Plan</h3>
-        <h3 class="text-base font-semibold uppercase text-white mt-1">$25/User/Month</h3>
-        <div class="text-xs text-white uppercase tracking-widest mt-6 space-y-1">
-            <p>Unlimited Users</p>
-            <p>Unlimited Projects</p>
-            <p>100 Documents Processed/Month</p>
-        </div>
-      </div>
+      {{ /plans }}
     </div>
     <div class="mt-10 max-w-3xl mx-auto text-center">
-      <a href="/pricing" class="inline-block rounded-2xl bg-black border border-projector-primary-600 px-10 py-3 text-base font-semibold uppercase tracking-widest text-white hover:bg-zinc-800 transition-colors">View Full Pricing</a>
+      <a href="{{ cta_url ?? '/pricing' }}" class="inline-block rounded-2xl bg-black border border-projector-primary-600 px-10 py-3 text-base font-semibold uppercase tracking-widest text-white hover:bg-zinc-800 transition-colors">{{ cta_text ?? "View Full Pricing" }}</a>
     </div>
   </div>
 </section>

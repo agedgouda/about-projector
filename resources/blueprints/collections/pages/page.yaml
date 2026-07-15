@@ -108,9 +108,46 @@ fields:
                     field:
                       type: text
                       display: Author
-        pricing_preview:
-          display: 'Pricing Preview'
-          fields: []
+        pricing:
+          display: 'Simple Pricing'
+          fields:
+            -
+              handle: plans
+              field:
+                type: grid
+                display: Plans
+                fields:
+                  -
+                    handle: name
+                    field:
+                      type: text
+                      display: Plan Name
+                  -
+                    handle: price
+                    field:
+                      type: text
+                      display: Price
+                  -
+                    handle: features
+                    field:
+                      type: grid
+                      display: Features
+                      fields:
+                        -
+                          handle: feature
+                          field:
+                            type: text
+                            display: Feature
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'CTA Button Text'
+            -
+              handle: cta_url
+              field:
+                type: text
+                display: 'CTA Button URL'
         final_cta:
           display: 'Final CTA'
           fields:
