@@ -159,7 +159,7 @@ fields:
             -
               handle: description
               field:
-                type: textarea
+                type: markdown
                 display: Description
             -
               handle: cta_text

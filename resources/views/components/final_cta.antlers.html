@@ -2,7 +2,7 @@
   <div class="mx-auto max-w-2xl">
     <h2 class="text-4xl font-bold uppercase text-black text-center mb-8">{{ headline ?? "Start Getting Things Done" }}</h2>
     {{ if description }}
-      <p class="text-base text-zinc-700 leading-relaxed mb-10">{{ description }}</p>
+      <div class="text-base text-zinc-700 leading-relaxed mb-10 prose">{{ description | markdown }}</div>
     {{ /if }}
     <div class="text-center">
       <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="inline-block rounded-full bg-black px-16 py-4 text-sm font-semibold uppercase tracking-widest text-white hover:bg-zinc-800 transition-colors">{{ cta_text ?? "Try It Free" }}</a>
