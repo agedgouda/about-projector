@@ -1,6 +1,6 @@
 <section class="relative bg-cover bg-center min-h-[340px] md:min-h-[580px] flex items-center" style="background-image: url('{{ if image }}{{ image:url }}{{ else }}/assets/hero-bg.png{{ /if }}')">
   <div class="relative z-10 mx-auto max-w-6xl px-6 py-16 md:py-24 text-center w-full">
-    <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-black mb-3 md:mb-4 uppercase">{{ if headline | starts_with('P') }}<img src="/logo.png" alt="P" class="inline-block h-[1.2em] w-auto align-[-0.1em] -my-[0.15em] mr-[0.05em]">{{ headline | substr:1 }}{{ else }}{{ headline }}{{ /if }}</h1>
+    <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-black mb-3 md:mb-4 uppercase">{{ headline }}</h1>
       <p class="text-base md:text-lg font-semibold text-black mb-6 md:mb-12 uppercase tracking-wider">A Project Management System Built For You</p>
     {{ if cta_text }}
       <a href="https://projecthq.app/register" class="inline-block rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors mt-8 md:mt-16">{{ cta_text }}</a>
