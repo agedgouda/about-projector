@@ -75,20 +75,58 @@ fields:
                       type: textarea
                       display: Description
         demo:
-          display: Demo
+          display: 'Hero Carousel'
           fields:
             -
-              handle: image
+              handle: slides
               field:
-                type: assets
-                display: Image
-                container: assets
-                max_files: 1
+                type: grid
+                display: Slides
+                instructions: 'Each row is one slide. Drag rows to reorder.'
+                mode: stacked
+                min_rows: 1
+                add_row: 'Add Slide'
+                fields:
+                  -
+                    handle: headline
+                    field:
+                      type: text
+                      display: Headline
+                      validate:
+                        - required
+                  -
+                    handle: description
+                    field:
+                      type: markdown
+                      display: Description
+                  -
+                    handle: cta_text
+                    field:
+                      type: text
+                      display: 'Button Text'
+                      default: 'Learn More'
+                      width: 50
+                  -
+                    handle: cta_url
+                    field:
+                      type: text
+                      display: 'Button Link'
+                      default: 'https://projecthq.app/register'
+                      width: 50
+                  -
+                    handle: image
+                    field:
+                      type: assets
+                      display: Image
+                      container: assets
+                      max_files: 1
             -
-              handle: description
+              handle: autoplay_seconds
               field:
-                type: markdown
-                display: Description
+                type: integer
+                display: 'Seconds Per Slide'
+                instructions: 'How long each slide shows before advancing. Set to 0 to turn off auto-advance.'
+                default: 7
         testimonials:
           display: Testimonials
           fields:

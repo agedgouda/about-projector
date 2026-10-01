@@ -1,15 +1,49 @@
-<section class="px-16 py-14 bg-projector-primary-600">
-  <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
-    <div class="flex flex-col flex-1 items-center">
-      <h2 class="text-3xl font-semibold uppercase text-white self-start">See It In Action</h2>
-      {{ if description }}
-        <div class="text-white/90 text-sm leading-relaxed mt-12 prose prose-sm prose-invert">{{ description | markdown }}</div>
-      {{ /if }}
-      <a href="https://calendly.com/jeffakaufman/projector-demo" target="_blank" class="hidden md:inline-block mt-12 rounded-2xl bg-black px-10 py-3 text-base font-normal uppercase text-white hover:bg-zinc-800 transition-colors">Request a Demo</a>
-    </div>
-    <div class="shrink-0 ml-auto">
-      <img src="{{ if image }}{{ image:url }}{{ else }}/assets/demo-screenshot.png{{ /if }}" alt="" class="rounded-2xl w-[700px] max-w-full h-auto shadow-sm">
-    </div>
+{{ if slides }}
+<section class="relative px-16 py-14 bg-zinc-100" data-carousel data-autoplay="{{ autoplay_seconds ?? 7 }}" aria-roledescription="carousel" aria-label="Highlights">
+  <div class="grid">
+    {{ slides }}
+      <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
+        <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
+          <div class="flex flex-col flex-1 items-start">
+            {{ if first }}
+              <h1 class="text-3xl font-semibold uppercase text-black">{{ headline }}</h1>
+            {{ else }}
+              <h2 class="text-3xl font-semibold uppercase text-black">{{ headline }}</h2>
+            {{ /if }}
+            {{ if description }}
+              <div class="text-zinc-700 text-sm leading-relaxed mt-12 prose prose-sm">{{ description | markdown }}</div>
+            {{ /if }}
+            {{ if cta_text }}
+              <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-12 rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+            {{ /if }}
+          </div>
+          {{ if image }}
+          <div class="shrink-0 ml-auto">
+            <img src="{{ image:url }}" alt="{{ image:alt }}" class="rounded-2xl w-[700px] max-w-full h-auto shadow-sm">
+          </div>
+          {{ /if }}
+        </div>
+        {{ if cta_text }}
+          <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="md:hidden mt-14 block w-fit rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+        {{ /if }}
+      </div>
+    {{ /slides }}
   </div>
-  <a href="https://calendly.com/jeffakaufman/projector-demo" target="_blank" class="md:hidden mt-14 block mx-auto w-fit rounded-2xl bg-black px-10 py-3 text-base font-normal uppercase text-white hover:bg-zinc-800 transition-colors">Request a Demo</a>
+
+  {{ if (slides | length) > 1 }}
+  <div class="mt-10 flex items-center justify-center gap-4">
+    <button type="button" data-carousel-prev class="rounded-full p-2 text-zinc-700 hover:bg-zinc-200 hover:text-black transition-colors" aria-label="Previous slide">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+    </button>
+    <div class="flex items-center gap-2">
+      {{ slides }}
+        <button type="button" data-carousel-dot class="h-2.5 rounded-full transition-all {{ if first }}w-8 bg-projector-primary-600{{ else }}w-2.5 bg-zinc-400 hover:bg-zinc-500{{ /if }}" aria-label="Go to slide {{ count }}" {{ if first }}aria-current="true"{{ /if }}></button>
+      {{ /slides }}
+    </div>
+    <button type="button" data-carousel-next class="rounded-full p-2 text-zinc-700 hover:bg-zinc-200 hover:text-black transition-colors" aria-label="Next slide">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+    </button>
+  </div>
+  {{ /if }}
 </section>
+{{ /if }}
