@@ -29,7 +29,3 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
-
-# Assets are uploaded and managed through the CP on production, not git
-/public/assets/*
-!/public/assets/.gitkeep
