@@ -99,6 +99,7 @@ fields:
                     field:
                       type: markdown
                       display: Description
+                      container: assets
                   -
                     handle: cta_text
                     field:
