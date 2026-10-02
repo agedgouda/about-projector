@@ -1,17 +1,22 @@
 {{ if slides }}
-<section class="relative px-16 py-10 bg-zinc-100" data-carousel data-autoplay="{{ autoplay_seconds ?? 7 }}" aria-roledescription="carousel" aria-label="Highlights">
+<section class="relative px-16 py-10 bg-projector-highlight-50" data-carousel data-autoplay="{{ autoplay_seconds ?? 7 }}" aria-roledescription="carousel" aria-label="Highlights">
   <div class="grid">
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
         <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
-          <div class="flex flex-col flex-1 items-start {{ if image }}md:[&:has(.prose_img)]:[contain:size]{{ /if }}">
+          <div class="flex flex-col flex-1 items-start {{ if image && description_image }}md:[contain:size]{{ /if }}">
             {{ if first }}
-              <h1 class="text-3xl font-semibold uppercase text-black">{{ headline }}</h1>
+              <h1 class="text-3xl font-semibold text-projector-ink">{{ headline }}</h1>
             {{ else }}
-              <h2 class="text-3xl font-semibold uppercase text-black">{{ headline }}</h2>
+              <h2 class="text-3xl font-semibold text-projector-ink">{{ headline }}</h2>
             {{ /if }}
             {{ if description }}
-              <div class="text-zinc-700 text-sm leading-relaxed mt-8 prose prose-sm md:[&:has(img)]:flex-1 md:[&:has(img)]:min-h-0 md:[&:has(img)]:flex md:[&:has(img)]:flex-col md:[&_p:has(img)]:flex-1 md:[&_p:has(img)]:min-h-0 md:[&_p:has(img)]:mb-0 md:[&_img]:max-h-full md:[&_img]:w-auto md:[&_img]:my-0 md:[&_img]:object-contain">{{ description | markdown }}</div>
+              <div class="text-projector-graphite text-sm leading-relaxed mt-8 prose prose-sm prose-projector">{{ description | markdown }}</div>
+            {{ /if }}
+            {{ if description_image }}
+              <div class="mt-8 md:flex-1 md:min-h-0">
+                <img src="{{ description_image:url }}" alt="{{ description_image:alt }}" class="max-w-full h-auto md:max-h-full md:w-auto object-contain">
+              </div>
             {{ /if }}
             {{ if cta_text }}
               <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-8 rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
@@ -32,7 +37,7 @@
 
   {{ if (slides | length) > 1 }}
   <div class="mt-6 flex items-center justify-center gap-4">
-    <button type="button" data-carousel-prev class="rounded-full p-2 text-zinc-700 hover:bg-zinc-200 hover:text-black transition-colors" aria-label="Previous slide">
+    <button type="button" data-carousel-prev class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors" aria-label="Previous slide">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
     </button>
     <div class="flex items-center gap-2">
@@ -40,7 +45,7 @@
         <button type="button" data-carousel-dot class="h-2.5 rounded-full transition-all {{ if first }}w-8 bg-projector-primary-600{{ else }}w-2.5 bg-zinc-400 hover:bg-zinc-500{{ /if }}" aria-label="Go to slide {{ count }}" {{ if first }}aria-current="true"{{ /if }}></button>
       {{ /slides }}
     </div>
-    <button type="button" data-carousel-next class="rounded-full p-2 text-zinc-700 hover:bg-zinc-200 hover:text-black transition-colors" aria-label="Next slide">
+    <button type="button" data-carousel-next class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors" aria-label="Next slide">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
     </button>
   </div>

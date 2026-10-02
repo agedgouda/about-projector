@@ -6,13 +6,13 @@
 
   <header class="mb-10">
     <time class="text-sm text-zinc-400">{{ date format="F j, Y" }}</time>
-    <h1 class="text-4xl font-bold text-zinc-900 mt-2 mb-4">{{ title }}</h1>
+    <h1 class="text-4xl font-bold text-projector-ink mt-2 mb-4">{{ title }}</h1>
     {{ if author }}
-      <p class="text-sm text-zinc-500">By {{ author:name }}</p>
+      <p class="text-sm text-projector-graphite">By {{ author:name }}</p>
     {{ /if }}
   </header>
 
-  <div class="prose prose-zinc max-w-none">
+  <div class="prose prose-projector max-w-none">
     {{ content }}
   </div>
 

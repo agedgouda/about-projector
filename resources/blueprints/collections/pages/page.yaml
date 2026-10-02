@@ -107,8 +107,17 @@ fields:
                         - orderedlist
                         - quote
                         - link
-                        - asset
                         - table
+                  -
+                    handle: description_image
+                    field:
+                      type: assets
+                      display: 'Description Image'
+                      instructions: 'Shown between the description and the button. Best at about 1000×500.'
+                      container: assets
+                      max_files: 1
+                      validate:
+                        - image
                   -
                     handle: cta_text
                     field:

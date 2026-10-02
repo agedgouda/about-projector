@@ -1,9 +1,9 @@
-<section class="py-16 px-16 bg-zinc-300">
-  <h2 class="text-3xl font-semibold uppercase text-black mb-12">How It Works</h2>
+<section class="py-16 px-16 bg-projector-highlight-100">
+  <h2 class="text-3xl font-semibold text-projector-ink mb-12">How It Works</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
       {{ steps }}
         <div class="flex flex-col items-center text-center">
-          <div class="mb-6 text-zinc-900">
+          <div class="mb-6 text-projector-ink">
             {{ if count == 1 }}
               {{# Microphone #}}
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-20 h-20">
@@ -24,7 +24,7 @@
             {{ /if }}
           </div>
           <h3 class="text-4xl font-semibold uppercase text-projector-primary-700 tracking-wider mb-1">{{ title }}</h3>
-          <p class="text-sm text-zinc-800 leading-relaxed max-w-xs text-justify">{{ description }}</p>
+          <p class="text-sm text-projector-graphite leading-relaxed max-w-xs text-justify">{{ description }}</p>
         </div>
       {{ /steps }}
   </div>

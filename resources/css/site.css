@@ -28,6 +28,23 @@
   --color-projector-primary-800: #73200c;
   --color-projector-primary-900: #4e1508;
   --color-projector-primary-950: #370f06;
+
+  /* Text colors shared by every section: ink for headings, graphite for body copy. */
+  --color-projector-ink: #2c2523;
+  --color-projector-graphite: #4a4a4a;
+}
+
+/* Markdown/rich text everywhere, matched to the ink/graphite text colors. */
+@utility prose-projector {
+  --tw-prose-body: var(--color-projector-graphite);
+  --tw-prose-headings: var(--color-projector-ink);
+  --tw-prose-lead: var(--color-projector-graphite);
+  --tw-prose-links: var(--color-projector-ink);
+  --tw-prose-bold: var(--color-projector-ink);
+  --tw-prose-counters: var(--color-projector-graphite);
+  --tw-prose-quotes: var(--color-projector-ink);
+  --tw-prose-captions: var(--color-projector-graphite);
+  --tw-prose-code: var(--color-projector-ink);
 }
 
 @layer base {
