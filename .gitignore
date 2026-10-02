@@ -29,3 +29,7 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+# Images uploaded through the CP live on each server and are never committed.
+# (Files already tracked here, like demo.png, are unaffected by this rule.)
+/public/assets/*
+!/public/assets/.gitkeep
