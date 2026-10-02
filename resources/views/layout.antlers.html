@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{ title ?? "Projector" }}</title>
+  {{ if is_homepage || !title }}
+    {{ share_title = "Projector: Manage Projects Your Way" }}
+  {{ else }}
+    {{ share_title = "{title} | Projector" }}
+  {{ /if }}
+  {{ share_description = meta_description ?? excerpt ?? "The project management tool that does the paperwork, so you can stop taking notes and start taking action." }}
+  <title>{{ share_title }}</title>
   <meta charset="utf-8">
+  <meta name="description" content="{{ share_description | strip_tags | entities }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title ?? 'Projector' }}">
+  <meta property="og:site_name" content="Projector">
+  <meta property="og:title" content="{{ share_title | entities }}">
+  <meta property="og:description" content="{{ share_description | strip_tags | entities }}">
+  <meta property="og:url" content="{{ permalink ?? current_url }}">
+  <meta name="twitter:title" content="{{ share_title | entities }}">
+  <meta name="twitter:description" content="{{ share_description | strip_tags | entities }}">
   <meta property="og:image" content="{{ config:app:url }}/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ config:app:url }}/og-image.png">
