@@ -139,6 +139,13 @@ fields:
                       display: Image
                       container: assets
                       max_files: 1
+                  -
+                    handle: image_frame
+                    field:
+                      type: toggle
+                      display: 'Show in Monitor Frame'
+                      instructions: 'Wraps a plain screenshot in a monitor. Turn off for images that already include a device.'
+                      default: true
             -
               handle: autoplay_seconds
               field:

@@ -23,8 +23,18 @@
             {{ /if }}
           </div>
           {{ if image }}
-          <div class="shrink-0 ml-auto">
-            <img src="{{ image:url }}" alt="{{ image:alt }}" class="rounded-2xl w-[700px] max-w-full h-auto shadow-sm">
+          <div class="shrink-0 ml-auto w-full md:w-[58%] md:max-w-[960px]">
+            {{ if image_frame }}
+              {{# Monitor drawn in CSS around a plain screenshot: bezel, chin, then stand. #}}
+              <div class="rounded-t-[1.25rem] bg-zinc-900 p-[1.5%] shadow-lg">
+                <img src="{{ image:url }}" alt="{{ image:alt }}" class="block w-full h-auto rounded-sm bg-white">
+              </div>
+              <div class="aspect-[100/7] rounded-b-[1.25rem] bg-gradient-to-b from-zinc-200 to-zinc-300 shadow-lg"></div>
+              <div class="mx-auto h-10 w-[16%] bg-gradient-to-b from-zinc-400 to-zinc-300 [clip-path:polygon(12%_0,88%_0,100%_100%,0_100%)]"></div>
+              <div class="mx-auto h-2 w-[30%] rounded-t-sm rounded-b-lg bg-gradient-to-b from-zinc-300 to-zinc-400 shadow-sm"></div>
+            {{ else }}
+              <img src="{{ image:url }}" alt="{{ image:alt }}" class="rounded-2xl w-full h-auto shadow-sm">
+            {{ /if }}
           </div>
           {{ /if }}
         </div>
