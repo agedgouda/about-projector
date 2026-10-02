@@ -1,20 +1,20 @@
 {{ if slides }}
-<section class="relative px-16 py-14 bg-zinc-100" data-carousel data-autoplay="{{ autoplay_seconds ?? 7 }}" aria-roledescription="carousel" aria-label="Highlights">
+<section class="relative px-16 py-10 bg-zinc-100" data-carousel data-autoplay="{{ autoplay_seconds ?? 7 }}" aria-roledescription="carousel" aria-label="Highlights">
   <div class="grid">
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
         <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
-          <div class="flex flex-col flex-1 items-start">
+          <div class="flex flex-col flex-1 items-start {{ if image }}md:[&:has(.prose_img)]:[contain:size]{{ /if }}">
             {{ if first }}
               <h1 class="text-3xl font-semibold uppercase text-black">{{ headline }}</h1>
             {{ else }}
               <h2 class="text-3xl font-semibold uppercase text-black">{{ headline }}</h2>
             {{ /if }}
             {{ if description }}
-              <div class="text-zinc-700 text-sm leading-relaxed mt-12 prose prose-sm">{{ description | markdown }}</div>
+              <div class="text-zinc-700 text-sm leading-relaxed mt-8 prose prose-sm md:[&:has(img)]:flex-1 md:[&:has(img)]:min-h-0 md:[&:has(img)]:flex md:[&:has(img)]:flex-col md:[&_p:has(img)]:flex-1 md:[&_p:has(img)]:min-h-0 md:[&_p:has(img)]:mb-0 md:[&_img]:max-h-full md:[&_img]:w-auto md:[&_img]:my-0 md:[&_img]:object-contain">{{ description | markdown }}</div>
             {{ /if }}
             {{ if cta_text }}
-              <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-12 rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+              <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-8 rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
             {{ /if }}
           </div>
           {{ if image }}
@@ -31,7 +31,7 @@
   </div>
 
   {{ if (slides | length) > 1 }}
-  <div class="mt-10 flex items-center justify-center gap-4">
+  <div class="mt-6 flex items-center justify-center gap-4">
     <button type="button" data-carousel-prev class="rounded-full p-2 text-zinc-700 hover:bg-zinc-200 hover:text-black transition-colors" aria-label="Previous slide">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
     </button>
