@@ -4,7 +4,7 @@
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
         <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
-          <div class="flex flex-col flex-1 items-start {{ if image && description_image }}md:[contain:size]{{ /if }}">
+          <div class="flex flex-col flex-1 items-start">
             {{ if first }}
               <h1 class="text-3xl font-semibold text-projector-ink">{{ headline }}</h1>
             {{ else }}
@@ -14,8 +14,8 @@
               <div class="text-projector-graphite text-sm leading-relaxed mt-8 prose prose-sm prose-projector">{{ description | markdown }}</div>
             {{ /if }}
             {{ if description_image }}
-              <div class="mt-8 md:flex-1 md:min-h-0">
-                <img src="{{ description_image:url }}" alt="{{ description_image:alt }}" class="max-w-full h-auto md:max-h-full md:w-auto object-contain">
+              <div class="mt-8 md:hidden lg:block lg:flex-1 lg:basis-0 lg:min-h-[280px]">
+                <img src="{{ description_image:url }}" alt="{{ description_image:alt }}" class="max-w-full h-auto lg:max-h-full lg:w-auto object-contain">
               </div>
             {{ /if }}
             {{ if cta_text }}
@@ -23,7 +23,7 @@
             {{ /if }}
           </div>
           {{ if image }}
-          <div class="shrink-0 ml-auto w-full md:w-[58%] md:max-w-[960px]">
+          <div class="shrink-0 ml-auto w-full md:w-[58%] md:max-w-[960px] md:flex md:flex-col md:justify-center">
             {{ if image_frame }}
               {{# Monitor drawn in CSS around a plain screenshot: bezel, chin, then stand. #}}
               <div class="rounded-t-[1.25rem] bg-zinc-900 p-[1.5%] shadow-lg">
