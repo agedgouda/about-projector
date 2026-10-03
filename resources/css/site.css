@@ -30,8 +30,8 @@
   --color-projector-primary-950: #370f06;
 
   /* Text colors shared by every section: ink for headings, graphite for body copy. */
-  --color-projector-ink: #2c2523;
-  --color-projector-graphite: #4a4a4a;
+  --color-projector-ink: #3a2c24;
+  --color-projector-graphite: #5c4f46;
 }
 
 /* Markdown/rich text everywhere, matched to the ink/graphite text colors. */

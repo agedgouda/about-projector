@@ -3,7 +3,7 @@
   <div class="grid">
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
-        <div class="flex flex-col md:flex-row gap-16 md:items-stretch">
+        <div class="flex flex-col md:flex-row gap-16 md:gap-10 md:items-stretch">
           <div class="flex flex-col flex-1 items-start">
             {{ if first }}
               <h1 class="text-3xl font-semibold text-projector-ink">{{ headline }}</h1>
@@ -15,7 +15,7 @@
             {{ /if }}
             {{ if description_image }}
               <div class="mt-8 md:hidden lg:block lg:flex-1 lg:basis-0 lg:min-h-[280px]">
-                <img src="{{ description_image:url }}" alt="{{ description_image:alt }}" class="max-w-full h-auto lg:max-h-full lg:w-auto object-contain">
+                <img src="{{ description_image:url }}" alt="{{ description_image:alt }}" class="rounded-xl shadow-lg shadow-projector-highlight-900/15 max-w-full h-auto lg:max-h-full lg:w-auto object-contain">
               </div>
             {{ /if }}
             {{ if cta_text }}
