@@ -34,6 +34,17 @@
   --color-projector-graphite: #5c4f46;
 }
 
+/* Brand text colors applied in Bard (app/Bard/TextColor.php). `*` keeps bold/italic inside the color. */
+.text-color-primary,
+.text-color-primary * {
+  color: var(--color-projector-primary-600);
+}
+
+.text-color-highlight,
+.text-color-highlight * {
+  color: var(--color-projector-highlight-600);
+}
+
 /* Markdown/rich text everywhere, matched to the ink/graphite text colors. */
 @utility prose-projector {
   --tw-prose-body: var(--color-projector-graphite);
@@ -45,6 +56,23 @@
   --tw-prose-quotes: var(--color-projector-ink);
   --tw-prose-captions: var(--color-projector-graphite);
   --tw-prose-code: var(--color-projector-ink);
+
+  /* Bulleted lists use the Projector logo instead of a dot. */
+  & ul > li {
+    position: relative;
+    list-style: none;
+  }
+
+  & ul > li::before {
+    content: '';
+    position: absolute;
+    left: -1.5em;
+    top: 0.3em;
+    width: 1em;
+    height: 1em;
+    background: url('../../public/icon.svg') center / contain no-repeat;
+    opacity: 0.8;
+  }
 }
 
 @layer base {
