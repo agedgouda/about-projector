@@ -1,5 +1,8 @@
 // This is all you.
 
+// Load styles through JS so the Vite dev server always serves the current CSS (its direct <link> copy goes stale).
+import '../css/site.css';
+
 // Hero carousel: fades between [data-slide] elements inside each [data-carousel].
 document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     const slides = [...carousel.querySelectorAll('[data-slide]')];

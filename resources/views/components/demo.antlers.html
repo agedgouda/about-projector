@@ -13,13 +13,8 @@
             {{ if description }}
               <div class="text-projector-graphite text-sm leading-relaxed mt-8 prose prose-sm prose-projector">{{ description }}</div>
             {{ /if }}
-            {{ if description_image }}
-              <div class="mt-8 md:hidden lg:block lg:flex-1 lg:basis-0 lg:min-h-[280px]">
-                <img src="{{ description_image:url }}" alt="{{ description_image:alt }}" class="rounded-xl shadow-lg shadow-projector-highlight-900/15 max-w-full h-auto lg:max-h-full lg:w-auto object-contain">
-              </div>
-            {{ /if }}
             {{ if cta_text }}
-              <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-8 rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+              <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-8 rounded-2xl bg-projector-primary-600 shadow-[0_2px_3px_rgb(28_18_16/0.45),0_8px_20px_rgb(28_18_16/0.35)] px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
             {{ /if }}
           </div>
           {{ if image }}
@@ -39,7 +34,7 @@
           {{ /if }}
         </div>
         {{ if cta_text }}
-          <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="md:hidden mt-14 block w-fit rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+          <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="md:hidden mt-14 block w-fit rounded-2xl bg-projector-primary-600 shadow-[0_2px_3px_rgb(28_18_16/0.45),0_8px_20px_rgb(28_18_16/0.35)] px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
         {{ /if }}
       </div>
     {{ /slides }}
