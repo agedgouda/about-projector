@@ -22,13 +22,13 @@
             {{ if image_frame }}
               {{# Monitor drawn in CSS around a plain screenshot: bezel, chin, then stand. #}}
               <div class="rounded-t-[1.25rem] bg-zinc-900 p-[1.5%] shadow-lg">
-                <img src="{{ image:url }}" alt="{{ image:alt }}" class="block w-full h-auto rounded-sm bg-white">
+                <img src="{{ image:url }}" alt="{{ image:alt ?? '{headline}: Projector app screenshot' }}" class="block w-full h-auto rounded-sm bg-white">
               </div>
               <div class="aspect-[100/7] rounded-b-[1.25rem] bg-gradient-to-b from-zinc-200 to-zinc-300 shadow-lg"></div>
               <div class="mx-auto h-10 w-[16%] bg-gradient-to-b from-zinc-400 to-zinc-300 [clip-path:polygon(12%_0,88%_0,100%_100%,0_100%)]"></div>
               <div class="mx-auto h-2 w-[30%] rounded-t-sm rounded-b-lg bg-gradient-to-b from-zinc-300 to-zinc-400 shadow-sm"></div>
             {{ else }}
-              <img src="{{ image:url }}" alt="{{ image:alt }}" class="rounded-2xl w-full h-auto shadow-sm">
+              <img src="{{ image:url }}" alt="{{ image:alt ?? '{headline}: Projector app screenshot' }}" class="rounded-2xl w-full h-auto shadow-sm">
             {{ /if }}
           </div>
           {{ /if }}
@@ -42,16 +42,18 @@
 
   {{ if (slides | length) > 1 }}
   <div class="mt-6 flex items-center justify-center gap-4">
-    <button type="button" data-carousel-prev class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors" aria-label="Previous slide">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+    <button type="button" data-carousel-prev class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors">
+      <span class="sr-only">Previous slide</span>
+      <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
     </button>
     <div class="flex items-center gap-2">
       {{ slides }}
         <button type="button" data-carousel-dot class="h-2.5 rounded-full transition-all {{ if first }}w-8 bg-projector-primary-600{{ else }}w-2.5 bg-zinc-400 hover:bg-zinc-500{{ /if }}" aria-label="Go to slide {{ count }}" {{ if first }}aria-current="true"{{ /if }}></button>
       {{ /slides }}
     </div>
-    <button type="button" data-carousel-next class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors" aria-label="Next slide">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+    <button type="button" data-carousel-next class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors">
+      <span class="sr-only">Next slide</span>
+      <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
     </button>
   </div>
   {{ /if }}

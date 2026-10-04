@@ -2,8 +2,9 @@
   <h2 class="text-3xl font-semibold text-projector-ink mb-12">What Our Users Say</h2>
 
   <div class="relative flex items-center justify-center gap-16">
-    <button id="testimonial-prev" class="flex-shrink-0 p-1 text-zinc-400 hover:text-projector-ink transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+    <button type="button" id="testimonial-prev" class="flex-shrink-0 p-1 text-zinc-400 hover:text-projector-ink transition-colors">
+      <span class="sr-only">Previous testimonial</span>
+      <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
       </svg>
     </button>
@@ -13,7 +14,7 @@
         {{ quotes }}
           <div class="w-full flex-shrink-0">
             <figure>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-8 w-8 text-projector-highlight-300 mb-4">
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="h-8 w-8 text-projector-highlight-300 mb-4">
                 <path d="M7.17 6.17A6.5 6.5 0 0 0 4 12v6h6v-6H6.5a4 4 0 0 1 2.5-3.7l-1.83-2.13Zm10 0A6.5 6.5 0 0 0 14 12v6h6v-6h-3.5a4 4 0 0 1 2.5-3.7L17.17 6.17Z" />
               </svg>
               <blockquote class="text-projector-graphite leading-relaxed mb-6 text-lg">{{ quote }}</blockquote>
@@ -27,8 +28,9 @@
       </div>
     </div>
 
-    <button id="testimonial-next" class="flex-shrink-0 p-1 text-zinc-400 hover:text-projector-ink transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+    <button type="button" id="testimonial-next" class="flex-shrink-0 p-1 text-zinc-400 hover:text-projector-ink transition-colors">
+      <span class="sr-only">Next testimonial</span>
+      <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
       </svg>
     </button>
