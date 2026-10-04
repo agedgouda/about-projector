@@ -46,12 +46,12 @@
 <body class="bg-white text-projector-ink antialiased">
 
   <header id="site-header" class="sticky top-0 z-50 bg-black transition-colors duration-300">
-    <nav class="px-6 h-20 flex items-center gap-8">
+    <nav class="px-6 h-20 flex items-center gap-4 md:gap-8">
       <a href="/" class="flex items-center gap-3 shrink-0" aria-label="Projector home">
         <img src="/logo.png" alt="Projector logo" class="h-10 w-10">
         <div class="flex flex-col leading-tight">
           <span class="text-base font-bold tracking-widest uppercase text-white">Projector</span>
-          <span class="text-[10px] tracking-widest uppercase text-zinc-400">Manage Projects Your Way</span>
+          <span class="text-xs tracking-wide sm:tracking-widest uppercase text-zinc-400">Manage Projects Your Way</span>
         </div>
       </a>
       <div class="ml-auto hidden md:flex items-center gap-8">
@@ -61,7 +61,7 @@
       </div>
       <div class="hidden md:flex items-center gap-4 shrink-0">
         <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white hover:bg-projector-primary-600 transition-colors">Login</a>
-        <a href="https://projecthq.app/register" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
+        <a href="https://projecthq.app/register?ref=nav" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
       </div>
       <button id="mobile-menu-btn" class="md:hidden ml-auto text-white p-2" aria-label="Open menu">
         <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -76,7 +76,7 @@
         {{ /nav:main }}
         <div class="pt-2 flex flex-col gap-3">
           <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white text-center hover:bg-projector-primary-600 transition-colors">Login</a>
-          <a href="https://projecthq.app/register" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink text-center hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
+          <a href="https://projecthq.app/register?ref=nav" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink text-center hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
         </div>
       </div>
     </div>
