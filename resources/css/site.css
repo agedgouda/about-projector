@@ -42,7 +42,7 @@
 
 .text-color-highlight,
 .text-color-highlight * {
-  color: var(--color-projector-highlight-600);
+  color: var(--color-projector-highlight-900);
 }
 
 /* Markdown/rich text everywhere, matched to the ink/graphite text colors. */

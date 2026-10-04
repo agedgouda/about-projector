@@ -1,7 +1,7 @@
 // Brand text colors for Bard. Mirrors app/Bard/TextColor.php, which renders the front end.
 const colors = [
     { name: 'primary', text: 'Primary Color', hex: '#c63615' },
-    { name: 'highlight', text: 'Highlight Color', hex: '#dd6c0e' },
+    { name: 'highlight', text: 'Highlight Color', hex: '#562a06' },
 ];
 
 Statamic.booting(() => {
