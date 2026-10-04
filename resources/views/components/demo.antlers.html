@@ -3,8 +3,9 @@
   <div class="grid">
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
-        <div class="flex flex-col md:flex-row gap-16 md:gap-10 md:items-stretch">
-          <div class="flex flex-col flex-1 items-start">
+        {{# One CTA per slide: grid puts it under the text on md+ and under the image on mobile (DOM order). #}}
+        <div class="grid gap-y-14 md:gap-x-10 md:gap-y-8 {{ if image }}md:grid-cols-[minmax(0,1fr)_min(58%,960px)] md:grid-rows-[auto_1fr]{{ /if }}">
+          <div class="flex flex-col items-start md:col-start-1 md:row-start-1">
             {{ if first }}
               <h1 class="text-2xl font-semibold text-projector-ink">{{ headline }}</h1>
             {{ else }}
@@ -13,12 +14,9 @@
             {{ if description }}
               <div class="text-projector-graphite text-sm leading-relaxed mt-8 prose prose-sm prose-projector">{{ description }}</div>
             {{ /if }}
-            {{ if cta_text }}
-              <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="hidden md:inline-block mt-8 rounded-2xl bg-projector-primary-600 shadow-[0_2px_3px_rgb(28_18_16/0.45),0_8px_20px_rgb(28_18_16/0.35)] px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
-            {{ /if }}
           </div>
           {{ if image }}
-          <div class="shrink-0 ml-auto w-full md:w-[58%] md:max-w-[960px] md:flex md:flex-col md:justify-center">
+          <div class="w-full md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
             {{ if image_frame }}
               {{# Monitor drawn in CSS around a plain screenshot: bezel, chin, then stand. #}}
               <div class="rounded-t-[1.25rem] bg-zinc-900 p-[1.5%] shadow-lg">
@@ -32,10 +30,10 @@
             {{ /if }}
           </div>
           {{ /if }}
+          {{ if cta_text }}
+            <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="justify-self-start self-start md:col-start-1 md:row-start-2 rounded-2xl bg-projector-primary-600 shadow-[0_2px_3px_rgb(28_18_16/0.45),0_8px_20px_rgb(28_18_16/0.35)] px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+          {{ /if }}
         </div>
-        {{ if cta_text }}
-          <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="md:hidden mt-14 block w-fit rounded-2xl bg-projector-primary-600 shadow-[0_2px_3px_rgb(28_18_16/0.45),0_8px_20px_rgb(28_18_16/0.35)] px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
-        {{ /if }}
       </div>
     {{ /slides }}
   </div>
