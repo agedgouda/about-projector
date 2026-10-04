@@ -1,3 +1,17 @@
+{{ section:head }}
+  <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "BlogPosting",
+      "headline": {{ title | to_json }},
+      "description": {{ (excerpt ?? '') | strip_tags | to_json }},
+      "datePublished": "{{ date format='c' }}",
+      "dateModified": "{{ updated_at format='c' }}",
+      "url": "{{ permalink }}",
+      {{ if featured_image }}"image": "{{ featured_image:permalink }}",{{ /if }}
+      {{ if author }}"author": {"@type": "Person", "name": {{ author:name | to_json }}},{{ /if }}
+      "publisher": {"@type": "Organization", "@id": "{{ config:app:url }}/#organization", "name": "Projector", "logo": "{{ config:app:url }}/logo.png"}}
+  </script>
+{{ /section:head }}
+
 <article class="mx-auto max-w-3xl px-6 py-16">
 
   {{ if featured_image }}

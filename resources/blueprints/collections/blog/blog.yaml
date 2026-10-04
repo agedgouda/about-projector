@@ -34,3 +34,10 @@ fields:
       display: 'Featured Image'
       container: assets
       max_files: 1
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      display: 'Hide from Search Engines'
+      instructions: 'Adds a noindex tag and leaves this page out of the sitemap. Use for empty or private pages.'
+      default: false

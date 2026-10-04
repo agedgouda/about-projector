@@ -7,3 +7,17 @@ fields:
       display: Content
       localizable: true
       save_html: true
+  -
+    handle: meta_description
+    field:
+      type: textarea
+      display: 'Share Description'
+      instructions: 'Shown under the title in search results and when this page is shared in email, Messages or social media. Leave blank to use the site default.'
+      character_limit: 160
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      display: 'Hide from Search Engines'
+      instructions: 'Adds a noindex tag and leaves this page out of the sitemap. Use for empty or private pages.'
+      default: false

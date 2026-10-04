@@ -6,10 +6,23 @@
   {{ else }}
     {{ share_title = "{title} | Projector" }}
   {{ /if }}
-  {{ share_description = meta_description ?? excerpt ?? "The project management tool that does the paperwork, so you can stop taking notes and start taking action." }}
+  {{ share_description = meta_description ?? excerpt ?? summary ?? "The project management tool that does the paperwork, so you can stop taking notes and start taking action." }}
   <title>{{ share_title }}</title>
   <meta charset="utf-8">
   <meta name="description" content="{{ share_description | strip_tags | entities }}">
+  <link rel="canonical" href="{{ permalink ?? current_url }}">
+  {{ if seo_noindex }}
+    <meta name="robots" content="noindex, follow">
+  {{ /if }}
+  {{ if is_homepage }}
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@graph": [
+        {"@type": "Organization", "@id": "{{ config:app:url }}/#organization", "name": "Projector", "url": "{{ config:app:url }}", "logo": "{{ config:app:url }}/logo.png"},
+        {"@type": "WebSite", "name": "Projector", "url": "{{ config:app:url }}", "publisher": {"@id": "{{ config:app:url }}/#organization"}}
+      ]}
+    </script>
+  {{ /if }}
+  {{ yield:head }}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico" sizes="32x32">
