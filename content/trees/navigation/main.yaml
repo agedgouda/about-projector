@@ -12,6 +12,19 @@ tree:
     title: Pricing
     url: '/#pricing'
   -
+    id: 9c41e7a2-5d38-4b6f-a0e2-3f8b17c64d95
+    title: Features
+    children:
+      -
+        id: 2f6c1b9e-8a4d-4c37-9e15-7b0d3a6f52c8
+        entry: integrations
+      -
+        id: 6b2d8f14-c7e3-4a59-b81d-0e9a5c3f7268
+        entry: meeting-automation
+      -
+        id: d3a7c5e1-94b2-4f68-8c0d-71e6b2f9a435
+        entry: client-reporting
+  -
     id: 8d283e45-57a3-4645-b829-ac5c27d90e56
     title: About
     url: /about

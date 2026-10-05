@@ -206,6 +206,91 @@ fields:
               field:
                 type: text
                 display: 'CTA Button URL'
+        page_hero:
+          display: 'Page Hero'
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+                validate:
+                  - required
+            -
+              handle: subhead
+              field:
+                type: textarea
+                display: Subhead
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'Button Text'
+                width: 50
+            -
+              handle: cta_url
+              field:
+                type: text
+                display: 'Button Link'
+                default: 'https://projecthq.app/register'
+                width: 50
+            -
+              handle: image
+              field:
+                type: assets
+                display: Image
+                container: assets
+                max_files: 1
+            -
+              handle: image_note
+              field:
+                type: text
+                display: 'Image Placeholder Note'
+                instructions: 'Describes the image still needed. Shown in a dashed box until an image is added.'
+        feature_block:
+          display: 'Feature Block'
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+                validate:
+                  - required
+            -
+              handle: body
+              field:
+                type: bard
+                display: Body
+                save_html: false
+                toolbar_mode: fixed
+                buttons:
+                  - bold
+                  - italic
+                  - code
+                  - unorderedlist
+                  - orderedlist
+                  - anchor
+            -
+              handle: image
+              field:
+                type: assets
+                display: Image
+                container: assets
+                max_files: 1
+            -
+              handle: image_note
+              field:
+                type: text
+                display: 'Image Placeholder Note'
+                instructions: 'Describes the image still needed. Shown in a dashed box until an image is added.'
+            -
+              handle: image_left
+              field:
+                type: toggle
+                display: 'Image on Left'
+                instructions: 'Alternate this between blocks so the page zigzags.'
+                default: false
         final_cta:
           display: 'Final CTA'
           fields:

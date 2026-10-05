@@ -1,0 +1,19 @@
+<section class="px-6 py-16 md:py-24">
+  <div class="mx-auto max-w-6xl grid items-center gap-10 md:gap-16 {{ if image || image_note }}md:grid-cols-2{{ /if }}">
+    <div class="{{ if image_left }}md:order-2{{ /if }}">
+      <h2 class="text-2xl md:text-3xl font-bold text-projector-ink">{{ headline }}</h2>
+      {{ if body }}
+        <div class="mt-6 prose prose-projector text-projector-graphite">{{ body }}</div>
+      {{ /if }}
+    </div>
+    {{ if image || image_note }}
+      <div class="{{ if image_left }}md:order-1{{ /if }}">
+        {{ if image }}
+          <img src="{{ image:url }}" alt="{{ image:alt ?? '' }}" class="w-full h-auto rounded-2xl shadow-sm">
+        {{ else }}
+          {{ partial:image_placeholder }}
+        {{ /if }}
+      </div>
+    {{ /if }}
+  </div>
+</section>
