@@ -4,17 +4,15 @@
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
         {{# One CTA per slide: grid puts it under the text on md+ and under the image on mobile (DOM order). #}}
+        {{ if first }}
+          <h1 class="mb-4 text-2xl font-semibold text-projector-ink">{{ headline }}</h1>
+        {{ else }}
+          <h2 class="mb-4  text-2xl font-semibold text-projector-ink">{{ headline }}</h2>
+        {{ /if }}
         <div class="grid gap-y-14 md:gap-x-10 md:gap-y-8 {{ if image }}md:grid-cols-[minmax(0,1fr)_min(58%,960px)] md:grid-rows-[auto_1fr]{{ /if }}">
-          <div class="flex flex-col items-start md:col-start-1 md:row-start-1">
-            {{ if first }}
-              <h1 class="text-2xl font-semibold text-projector-ink">{{ headline }}</h1>
-            {{ else }}
-              <h2 class="text-2xl font-semibold text-projector-ink">{{ headline }}</h2>
-            {{ /if }}
-            {{ if description }}
-              <div class="text-projector-graphite text-sm leading-relaxed mt-8 prose prose-sm prose-projector">{{ description }}</div>
-            {{ /if }}
-          </div>
+          {{ if description }}
+            <div class="text-projector-graphite text-sm leading-relaxed prose prose-sm prose-projector md:col-start-1 md:row-start-1">{{ description }}</div>
+          {{ /if }}
           {{ if image }}
           <div class="w-full md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
             {{ if image_frame }}
