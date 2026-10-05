@@ -4,14 +4,6 @@ tree:
     title: Product
     url: '/#product'
   -
-    id: 4eaa22a7-6e50-4e97-84f8-c375a5ea7de1
-    title: Demo
-    url: '/#demo'
-  -
-    id: d98961b7-6169-4ee7-b429-75b554ab457c
-    title: Pricing
-    url: '/#pricing'
-  -
     id: 9c41e7a2-5d38-4b6f-a0e2-3f8b17c64d95
     title: Features
     children:
@@ -24,11 +16,3 @@ tree:
       -
         id: d3a7c5e1-94b2-4f68-8c0d-71e6b2f9a435
         entry: client-reporting
-  -
-    id: 8d283e45-57a3-4645-b829-ac5c27d90e56
-    title: About
-    url: /about
-  -
-    id: 60bd7002-403b-4b91-8e66-e93ec8d4f984
-    title: Contact
-    url: /contact
