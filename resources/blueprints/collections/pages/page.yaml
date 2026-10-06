@@ -285,11 +285,22 @@ fields:
                 display: 'Image Placeholder Note'
                 instructions: 'Describes the image still needed. Shown in a dashed box until an image is added.'
             -
+              handle: layout
+              field:
+                type: button_group
+                display: Layout
+                instructions: 'Wide image makes the image about twice the size of the text column, still beside the text.'
+                options:
+                  side: 'Side by side'
+                  wide: 'Wide image'
+                  below: 'Image below'
+                default: side
+            -
               handle: image_left
               field:
                 type: toggle
                 display: 'Image on Left'
-                instructions: 'Alternate this between blocks so the page zigzags.'
+                instructions: 'Alternate this between blocks so the page zigzags. Ignored when the image is below.'
                 default: false
         final_cta:
           display: 'Final CTA'
