@@ -289,12 +289,23 @@ fields:
               field:
                 type: button_group
                 display: Layout
-                instructions: 'Wide image makes the image about twice the size of the text column, still beside the text.'
                 options:
-                  side: 'Side by side'
-                  wide: 'Wide image'
+                  side: 'Beside text'
                   below: 'Image below'
                 default: side
+            -
+              handle: image_size
+              field:
+                type: button_group
+                display: 'Image Size'
+                instructions: 'How much of the row the image gets. Images never display larger than their actual size.'
+                options:
+                  large: Large
+                  medium: Medium
+                  small: Small
+                default: large
+                if:
+                  layout: 'equals side'
             -
               handle: image_left
               field:

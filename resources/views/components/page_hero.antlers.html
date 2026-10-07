@@ -11,8 +11,10 @@
   {{ if image || image_note }}
     <div class="mx-auto mt-12 md:mt-16 max-w-5xl">
       {{ if image }}
-        <div class="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-lg">
-          <img src="{{ image:url }}" alt="{{ image:alt ?? '' }}" class="block w-full h-auto">
+        <div class="flex justify-center">
+          <div class="max-w-full overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-lg">
+            <img src="{{ image:url }}" alt="{{ image:alt ?? '' }}" class="block max-w-full h-auto">
+          </div>
         </div>
       {{ else }}
         {{ partial:image_placeholder }}
