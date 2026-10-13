@@ -71,3 +71,28 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 
     start();
 });
+
+// Scroll cue: a down-arrow that stays until the visitor reaches the bottom of the page.
+document.querySelectorAll('[data-scroll-cue]').forEach((cue) => {
+    const header = document.getElementById('site-header');
+    const sections = [...document.querySelectorAll('main > *')];
+
+    const update = () => {
+        const visible = window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 24;
+        cue.classList.toggle('opacity-0', !visible);
+        cue.classList.toggle('pointer-events-none', !visible);
+        cue.tabIndex = visible ? 0 : -1;
+        cue.toggleAttribute('aria-hidden', !visible);
+    };
+
+    // Jump to the next section starting below the sticky header, or a screenful if none is left.
+    cue.addEventListener('click', () => {
+        const below = (header?.offsetHeight ?? 0) + 2;
+        const next = sections.find((section) => section.getBoundingClientRect().top > below);
+        if (next) next.scrollIntoView({ behavior: 'smooth' });
+        else window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+});

@@ -56,5 +56,11 @@
     </button>
   </div>
   {{ /if }}
+
+  {{# Shown by site.js until the visitor reaches the bottom of the page. #}}
+  <button type="button" data-scroll-cue class="fixed bottom-6 right-6 z-40 rounded-full bg-white p-3 text-projector-ink shadow-lg ring-1 ring-zinc-200 hover:bg-zinc-100 transition-opacity duration-300 opacity-0 pointer-events-none" tabindex="-1" aria-hidden="true">
+    <span class="sr-only">Scroll down</span>
+    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+  </button>
 </section>
 {{ /if }}
