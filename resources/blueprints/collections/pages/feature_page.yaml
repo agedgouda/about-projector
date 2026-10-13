@@ -1,0 +1,54 @@
+title: 'Feature Page'
+order: 1
+fields:
+  -
+    handle: sections
+    field: page_sections.sections
+    config:
+      # New entries start with the same layout as Integrations, Meeting Automation and Client Reporting.
+      default:
+        -
+          type: page_hero
+          enabled: true
+          headline: 'Page headline'
+          subhead: 'Subhead goes here.'
+          cta_text: 'Try Projector Free →'
+          image_note: 'Hero image'
+        -
+          type: feature_block
+          enabled: true
+          headline: 'Feature headline'
+          layout: side
+          image_left: false
+          image_note: 'Feature image'
+        -
+          type: feature_block
+          enabled: true
+          headline: 'Feature headline'
+          layout: side
+          image_left: true
+          image_note: 'Feature image'
+        -
+          type: final_cta
+          enabled: true
+          headline: 'Closing headline'
+          cta_text: 'Get Started Free'
+  -
+    handle: template
+    field:
+      type: hidden
+      default: page
+  -
+    handle: meta_description
+    field:
+      type: textarea
+      display: 'Share Description'
+      instructions: 'Shown under the title when this page is shared in email, Messages or social media. Leave blank to use the site default.'
+      character_limit: 160
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      display: 'Hide from Search Engines'
+      instructions: 'Adds a noindex tag and leaves this page out of the sitemap. Use for empty or private pages.'
+      default: false

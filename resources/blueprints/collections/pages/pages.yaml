@@ -1,4 +1,5 @@
 title: Pages
+order: 3
 fields:
   -
     handle: content

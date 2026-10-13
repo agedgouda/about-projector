@@ -1,0 +1,338 @@
+title: 'Page Sections'
+fields:
+  -
+    handle: sections
+    field:
+      type: replicator
+      display: Sections
+      sets:
+        hero:
+          display: Hero
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+            -
+              handle: subhead
+              field:
+                type: textarea
+                display: Subhead
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'CTA Text'
+            -
+              handle: image
+              field:
+                type: assets
+                display: Background Image
+                container: assets
+                max_files: 1
+        features:
+          display: Features
+          fields:
+            -
+              handle: anchor
+              field:
+                type: hidden
+                default: product
+            -
+              handle: items
+              field:
+                type: grid
+                display: Items
+                fields:
+                  -
+                    handle: title
+                    field:
+                      type: text
+                      display: Title
+                  -
+                    handle: description
+                    field:
+                      type: textarea
+                      display: Description
+        how_it_works:
+          display: 'How It Works'
+          fields:
+            -
+              handle: steps
+              field:
+                type: grid
+                display: Steps
+                fields:
+                  -
+                    handle: title
+                    field:
+                      type: text
+                      display: Title
+                  -
+                    handle: description
+                    field:
+                      type: textarea
+                      display: Description
+        demo:
+          display: 'Hero Carousel'
+          fields:
+            -
+              handle: slides
+              field:
+                type: grid
+                display: Slides
+                instructions: 'Each row is one slide. Drag rows to reorder.'
+                mode: stacked
+                min_rows: 1
+                add_row: 'Add Slide'
+                fields:
+                  -
+                    handle: headline
+                    field:
+                      type: text
+                      display: Headline
+                      validate:
+                        - required
+                  -
+                    handle: description
+                    field:
+                      type: bard
+                      display: Description
+                      instructions: 'Select text and use the colored **A** buttons to make it Primary or Highlight.'
+                      save_html: false
+                      toolbar_mode: fixed
+                      buttons:
+                        - bold
+                        - italic
+                        - textcolorprimary
+                        - textcolorhighlight
+                        - unorderedlist
+                        - orderedlist
+                        - quote
+                        - anchor
+                        - table
+                  -
+                    handle: cta_text
+                    field:
+                      type: text
+                      display: 'Button Text'
+                      default: 'Learn More'
+                      width: 50
+                  -
+                    handle: cta_url
+                    field:
+                      type: text
+                      display: 'Button Link'
+                      default: 'https://projecthq.app/register'
+                      width: 50
+                  -
+                    handle: image
+                    field:
+                      type: assets
+                      display: Image
+                      container: assets
+                      max_files: 1
+                  -
+                    handle: image_frame
+                    field:
+                      type: toggle
+                      display: 'Show in Monitor Frame'
+                      instructions: 'Wraps a plain screenshot in a monitor. Turn off for images that already include a device.'
+                      default: true
+            -
+              handle: autoplay_seconds
+              field:
+                type: integer
+                display: 'Seconds Per Slide'
+                instructions: 'How long each slide shows before advancing. Set to 0 to turn off auto-advance.'
+                default: 7
+        testimonials:
+          display: Testimonials
+          fields:
+            -
+              handle: quotes
+              field:
+                type: grid
+                display: Quotes
+                fields:
+                  -
+                    handle: quote
+                    field:
+                      type: textarea
+                      display: Quote
+                  -
+                    handle: author
+                    field:
+                      type: text
+                      display: Author
+        pricing:
+          display: 'Simple Pricing'
+          fields:
+            -
+              handle: plans
+              field:
+                type: grid
+                display: Plans
+                fields:
+                  -
+                    handle: name
+                    field:
+                      type: text
+                      display: Plan Name
+                  -
+                    handle: price
+                    field:
+                      type: text
+                      display: Price
+                  -
+                    handle: features
+                    field:
+                      type: grid
+                      display: Features
+                      fields:
+                        -
+                          handle: feature
+                          field:
+                            type: text
+                            display: Feature
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'CTA Button Text'
+            -
+              handle: cta_url
+              field:
+                type: text
+                display: 'CTA Button URL'
+        page_hero:
+          display: 'Page Hero'
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+                validate:
+                  - required
+            -
+              handle: subhead
+              field:
+                type: textarea
+                display: Subhead
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'Button Text'
+                width: 50
+            -
+              handle: cta_url
+              field:
+                type: text
+                display: 'Button Link'
+                default: 'https://projecthq.app/register'
+                width: 50
+            -
+              handle: image
+              field:
+                type: assets
+                display: Image
+                container: assets
+                max_files: 1
+            -
+              handle: image_note
+              field:
+                type: text
+                display: 'Image Placeholder Note'
+                instructions: 'Describes the image still needed. Shown in a dashed box until an image is added.'
+        feature_block:
+          display: 'Feature Block'
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+                validate:
+                  - required
+            -
+              handle: body
+              field:
+                type: bard
+                display: Body
+                save_html: false
+                toolbar_mode: fixed
+                buttons:
+                  - bold
+                  - italic
+                  - code
+                  - unorderedlist
+                  - orderedlist
+                  - anchor
+            -
+              handle: image
+              field:
+                type: assets
+                display: Image
+                container: assets
+                max_files: 1
+            -
+              handle: image_note
+              field:
+                type: text
+                display: 'Image Placeholder Note'
+                instructions: 'Describes the image still needed. Shown in a dashed box until an image is added.'
+            -
+              handle: layout
+              field:
+                type: button_group
+                display: Layout
+                options:
+                  side: 'Beside text'
+                  below: 'Image below'
+                default: side
+            -
+              handle: image_size
+              field:
+                type: button_group
+                display: 'Image Size'
+                instructions: 'How much of the row the image gets. Images never display larger than their actual size.'
+                options:
+                  large: Large
+                  medium: Medium
+                  small: Small
+                default: large
+                if:
+                  layout: 'equals side'
+            -
+              handle: image_left
+              field:
+                type: toggle
+                display: 'Image on Left'
+                instructions: 'Alternate this between blocks so the page zigzags. Ignored when the image is below.'
+                default: false
+        final_cta:
+          display: 'Final CTA'
+          fields:
+            -
+              handle: headline
+              field:
+                type: text
+                display: Headline
+            -
+              handle: description
+              field:
+                type: markdown
+                display: Description
+            -
+              handle: cta_text
+              field:
+                type: text
+                display: 'CTA Text'
+            -
+              handle: cta_url
+              field:
+                type: text
+                display: 'CTA URL'

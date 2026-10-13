@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Statamic\Eloquent\Entries\EntryModel as BaseEntryModel;
+use Statamic\Eloquent\Entries\UuidEntryModel;
 
-class EntryModel extends BaseEntryModel
+// String ids; new entries (CP create, Duplicate) get a UUID since the id column has no default.
+class EntryModel extends UuidEntryModel
 {
-    public $incrementing = false;
-
-    protected $keyType = 'string';
 }
