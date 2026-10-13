@@ -262,11 +262,14 @@ fields:
               field:
                 type: bard
                 display: Body
+                instructions: 'Select text and use the colored **A** buttons to make it Primary or Highlight.'
                 save_html: false
                 toolbar_mode: fixed
                 buttons:
                   - bold
                   - italic
+                  - textcolorprimary
+                  - textcolorhighlight
                   - code
                   - unorderedlist
                   - orderedlist
