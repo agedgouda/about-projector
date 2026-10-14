@@ -16,6 +16,8 @@
   --color-projector-highlight-800: #864209;
   --color-projector-highlight-900: #562a06;
   --color-projector-highlight-950: #391c04;
+  /* Lemon for footer link hover: visibly different from white and still 4.5:1 on primary-600. */
+  --color-projector-gold: #fff126;
 
   --color-projector-primary-50: #fdf4f1;
   --color-projector-primary-100: #fbe4df;
