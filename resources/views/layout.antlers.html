@@ -128,8 +128,23 @@
   </main>
 
   <footer class="bg-black">
-    <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-zinc-400">
-      © {{ now format="Y" }} All rights reserved.
+    <div class="mx-auto max-w-6xl px-6 py-8">
+      {{# Same items as the header nav, flattened: dropdown groups list their pages directly. #}}
+      <nav aria-label="Footer" class="mb-6 flex flex-wrap gap-x-8 gap-y-3">
+        <a href="/" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">Home</a>
+        {{ nav:main }}
+          {{ if children }}
+            {{ children }}
+              <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">{{ title }}</a>
+            {{ /children }}
+          {{ else }}
+            <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">{{ title }}</a>
+          {{ /if }}
+        {{ /nav:main }}
+        <a href="https://projecthq.app/login" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">Login</a>
+        <a href="https://projecthq.app/register?ref=footer" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-primary-400 transition-colors">Get Started &rarr;</a>
+      </nav>
+      <p class="text-sm text-zinc-400">© {{ now format="Y" }} All rights reserved.</p>
     </div>
   </footer>
 
