@@ -45,6 +45,12 @@
   color: var(--color-projector-highlight-900);
 }
 
+/* On the carousel's peach background primary-600 text is under 4.5:1 contrast; one shade darker passes. */
+[data-carousel] .text-color-primary,
+[data-carousel] .text-color-primary * {
+  color: var(--color-projector-primary-700);
+}
+
 /* Markdown/rich text everywhere, matched to the ink/graphite text colors. */
 @utility prose-projector {
   --tw-prose-body: var(--color-projector-graphite);

@@ -117,7 +117,7 @@ fields:
                     field:
                       type: text
                       display: 'Button Text'
-                      default: 'Learn More'
+                      default: 'Try Projector Free'
                       width: 50
                   -
                     handle: cta_url
