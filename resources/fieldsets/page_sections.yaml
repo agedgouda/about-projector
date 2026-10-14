@@ -219,8 +219,20 @@ fields:
             -
               handle: subhead
               field:
-                type: textarea
+                type: bard
                 display: Subhead
+                instructions: 'Select text and use the colored **A** buttons to make it Primary or Highlight.'
+                save_html: false
+                toolbar_mode: fixed
+                buttons:
+                  - bold
+                  - italic
+                  - textcolorprimary
+                  - textcolorhighlight
+                  - code
+                  - unorderedlist
+                  - orderedlist
+                  - anchor
             -
               handle: cta_text
               field:

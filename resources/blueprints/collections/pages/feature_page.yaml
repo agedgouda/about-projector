@@ -11,7 +11,13 @@ fields:
           type: page_hero
           enabled: true
           headline: 'Page headline'
-          subhead: 'Subhead goes here.'
+          subhead:
+            -
+              type: paragraph
+              content:
+                -
+                  type: text
+                  text: 'Subhead goes here.'
           cta_text: 'Try Projector Free →'
           image_note: 'Hero image'
         -

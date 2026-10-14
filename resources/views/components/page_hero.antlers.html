@@ -2,7 +2,7 @@
   <div class="mx-auto max-w-3xl text-center">
     <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-projector-ink">{{ headline }}</h1>
     {{ if subhead }}
-      <p class="mt-6 text-base md:text-lg leading-relaxed text-projector-graphite">{{ subhead }}</p>
+      <div class="mt-6 prose md:prose-lg prose-projector prose-p:leading-relaxed max-w-none text-projector-graphite">{{ subhead }}</div>
     {{ /if }}
     {{ if cta_text }}
       <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="mt-10 inline-block rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
