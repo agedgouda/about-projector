@@ -82,3 +82,12 @@
     outline-offset: 2px;
   }
 }
+
+/* A feature block directly under a page hero starts as close to it as the hero's bottom padding (pb-8 md:pb-10.5 in page_hero.antlers.html). */
+#page_hero + #feature_block > section {
+  padding-top: calc(var(--spacing) * 8);
+
+  @media (width >= 48rem) {
+    padding-top: calc(var(--spacing) * 10.5);
+  }
+}
