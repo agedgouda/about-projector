@@ -4,12 +4,22 @@
 {{ layout = layout == 'below' ? 'below' : 'side' }}
 {{ image_size = image_size ?? 'large' }}
 {{ beside = has_image && layout == 'side' }}
-<section class="px-6 py-16 md:py-24">
+{{# Alternates peach (like the home carousel/pricing) and cream (like testimonials), counted back from the last section so the cream final CTA always gets a peach block above it. #}}
+{{ peach = (total_results - 1 - index) % 2 == 1 }}
+<section class="px-6 py-16 md:py-24 {{ peach ? 'bg-projector-highlight-200' : 'bg-projector-highlight-50' }}">
   <div class="mx-auto grid items-start gap-10 md:gap-16 {{ beside ? 'max-w-screen-2xl' : 'max-w-6xl' }} {{ if beside && image_size == 'medium' }}md:grid-cols-2{{ elseif beside && image_size == 'small' }}{{ image_left ? 'md:grid-cols-[1fr_2fr]' : 'md:grid-cols-[2fr_1fr]' }}{{ elseif beside }}{{ image_left ? 'md:grid-cols-[2fr_1fr]' : 'md:grid-cols-[1fr_2fr]' }}{{ /if }}">
     <div class="{{ if image_left && layout != 'below' }}md:order-2{{ /if }}">
-      <h2 class="text-2xl md:text-3xl font-bold text-projector-ink">{{ headline }}</h2>
+      {{ if peach }}
+        <h2 class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-projector-ink">{{ headline }}</h2>
+      {{ else }}
+        <h2 class="text-3xl font-semibold text-projector-ink">{{ headline }}</h2>
+      {{ /if }}
       {{ if body }}
-        <div class="mt-6 prose prose-projector text-projector-graphite">{{ body }}</div>
+        {{ if peach }}
+          <div class="mt-6 prose prose-projector text-[#4b3d35] prose-p:text-[#4b3d35] prose-li:text-[#4b3d35]">{{ body }}</div>
+        {{ else }}
+          <div class="mt-6 prose prose-projector text-projector-graphite">{{ body }}</div>
+        {{ /if }}
       {{ /if }}
     </div>
     {{ if has_image }}

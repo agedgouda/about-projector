@@ -47,9 +47,11 @@
   color: var(--color-projector-highlight-900);
 }
 
-/* On the carousel's peach background primary-600 text is under 4.5:1 contrast; one shade darker passes. */
+/* On peach (highlight-200) backgrounds primary-600 text is under 4.5:1 contrast; one shade darker passes. */
 [data-carousel] .text-color-primary,
-[data-carousel] .text-color-primary * {
+[data-carousel] .text-color-primary *,
+.bg-projector-highlight-200 .text-color-primary,
+.bg-projector-highlight-200 .text-color-primary * {
   color: var(--color-projector-primary-700);
 }
 
