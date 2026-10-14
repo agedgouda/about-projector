@@ -128,23 +128,42 @@
   </main>
 
   <footer class="bg-projector-primary-600">
-    <div class="mx-auto max-w-6xl px-6 py-8">
-      {{# Same items as the header nav, flattened: dropdown groups list their pages directly. #}}
-      <nav aria-label="Footer" class="mb-6 flex flex-wrap gap-x-8 gap-y-3">
-        <a href="/" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-gold transition-colors">Home</a>
-        {{ nav:main }}
-          {{ if children }}
-            {{ children }}
-              <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-gold transition-colors">{{ title }}</a>
-            {{ /children }}
-          {{ else }}
-            <a href="{{ url }}" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-gold transition-colors">{{ title }}</a>
-          {{ /if }}
-        {{ /nav:main }}
-        <a href="https://projecthq.app/login" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-gold transition-colors">Login</a>
-        <a href="https://projecthq.app/register?ref=footer" class="text-xs font-semibold tracking-widest uppercase text-white hover:text-projector-gold transition-colors">Get Started &rarr;</a>
-      </nav>
-      <p class="text-sm text-projector-highlight-100">© {{ now format="Y" }} All rights reserved.</p>
+    <div class="mx-auto max-w-6xl px-6 py-10">
+      <div class="grid gap-10 md:grid-cols-3 md:justify-items-center">
+        <div class="flex flex-col gap-4">
+          <a href="/" class="flex items-center gap-3 self-start" aria-label="Projector home">
+            <img src="/logo.png" alt="Projector logo" class="h-10 w-10">
+            <div class="flex flex-col leading-tight">
+              <span class="text-base font-bold tracking-widest uppercase text-white">Projector</span>
+              <span class="text-xs tracking-wide sm:tracking-widest uppercase text-white">Project Management System</span>
+            </div>
+          </a>
+          <p class="text-sm text-projector-highlight-100">© {{ now format="Y" }} All rights reserved.</p>
+        </div>
+        {{# Pages from the header nav's dropdown groups, listed directly. #}}
+        <nav aria-labelledby="footer-features">
+          <h2 id="footer-features" class="mb-5 text-base font-extrabold tracking-widest uppercase text-white">Features</h2>
+          {{# md+: zero-width list so the column is as wide as the heading, which centers "Features" on the page; links overflow to the right. #}}
+          <ul class="flex flex-col gap-3 md:w-0 md:whitespace-nowrap">
+            {{ nav:main }}
+              {{ if children }}
+                {{ children }}
+                  <li><a href="{{ url }}" class="text-xs font-semibold tracking-widest text-white hover:text-projector-gold transition-colors">{{ title }}</a></li>
+                {{ /children }}
+              {{ else }}
+                <li><a href="{{ url }}" class="text-xs font-semibold tracking-widest text-white hover:text-projector-gold transition-colors">{{ title }}</a></li>
+              {{ /if }}
+            {{ /nav:main }}
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-account">
+          <h2 id="footer-account" class="mb-5 text-base font-extrabold tracking-widest uppercase text-white">Account</h2>
+          <ul class="flex flex-col gap-3">
+            <li><a href="https://projecthq.app/login" class="text-xs font-semibold tracking-widest text-white hover:text-projector-gold transition-colors">Login</a></li>
+            <li><a href="https://projecthq.app/register?ref=footer" class="text-xs font-semibold tracking-widest text-white underline underline-offset-4 hover:text-projector-gold transition-colors">Get Started &rarr;</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </footer>
 
