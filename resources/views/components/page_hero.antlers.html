@@ -1,11 +1,11 @@
-<section class="px-6 pt-16 pb-12 md:pt-24 md:pb-16">
+<section class="bg-projector-primary-600 px-6 pt-10.5 pb-8 md:pt-15.5 md:pb-10.5">
   <div class="mx-auto max-w-3xl text-center">
-    <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-projector-ink">{{ headline }}</h1>
+    <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-projector-highlight-200">{{ headline }}</h1>
     {{ if subhead }}
-      <div class="mt-6 prose md:prose-lg prose-projector prose-p:leading-relaxed max-w-none text-projector-graphite">{{ subhead }}</div>
+      <div class="mt-6 prose md:prose-lg prose-projector prose-p:leading-relaxed prose-p:text-white prose-li:text-white prose-strong:text-white prose-a:text-white prose-code:text-white prose-li:marker:text-white max-w-none text-white">{{ subhead }}</div>
     {{ /if }}
     {{ if cta_text }}
-      <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="mt-10 inline-block rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors">{{ cta_text }}</a>
+      <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="mt-10 inline-block rounded-2xl bg-projector-highlight-400 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-950 hover:bg-projector-highlight-200 transition-colors">{{ cta_text }}</a>
     {{ /if }}
   </div>
   {{ if image || image_note }}
