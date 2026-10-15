@@ -78,7 +78,7 @@
       </div>
       <div class="hidden md:flex items-center gap-4 shrink-0">
         <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white hover:bg-projector-primary-600 transition-colors">Login</a>
-        <a href="https://projecthq.app/register?ref=nav" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
+        <a href="{{ 'https://projecthq.app/register' | signup_ref('nav') }}" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
       </div>
       <button id="mobile-menu-btn" class="md:hidden ml-auto text-white p-2" aria-label="Open menu">
         <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -100,7 +100,7 @@
         {{ /nav:main }}
         <div class="pt-2 flex flex-col gap-3">
           <a href="https://projecthq.app/login" class="rounded border border-projector-primary-600 px-5 py-2 text-xs font-semibold tracking-widest uppercase text-white text-center hover:bg-projector-primary-600 transition-colors">Login</a>
-          <a href="https://projecthq.app/register?ref=nav" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink text-center hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
+          <a href="{{ 'https://projecthq.app/register' | signup_ref('nav-mobile') }}" class="rounded border border-white bg-white px-5 py-2 text-xs font-semibold tracking-widest uppercase text-projector-ink text-center hover:bg-black hover:text-white transition-colors">Get Started &rarr;</a>
         </div>
       </div>
     </div>
@@ -160,7 +160,7 @@
           <h2 id="footer-account" class="mb-5 text-base font-extrabold tracking-widest uppercase text-white">Account</h2>
           <ul class="flex flex-col gap-3">
             <li><a href="https://projecthq.app/login" class="text-xs font-semibold tracking-widest text-white hover:text-projector-gold transition-colors">Login</a></li>
-            <li><a href="https://projecthq.app/register?ref=footer" class="text-xs font-semibold tracking-widest text-white underline underline-offset-4 hover:text-projector-gold transition-colors">Get Started &rarr;</a></li>
+            <li><a href="{{ 'https://projecthq.app/register' | signup_ref('footer') }}" class="text-xs font-semibold tracking-widest text-white underline underline-offset-4 hover:text-projector-gold transition-colors">Get Started &rarr;</a></li>
           </ul>
         </nav>
       </div>

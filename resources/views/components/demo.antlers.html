@@ -29,10 +29,8 @@
           </div>
           {{ /if }}
           {{ if cta_text }}
-            {{# Tag each slide's link (ref=hero-N) so identical CTAs across slides aren't redundant links, and sign-ups show which slide converted. #}}
-            {{ cta_href = cta_url ?? 'https://projecthq.app/register' }}
-            {{ cta_sep = (cta_href | contains('?')) ? '&' : '?' }}
-            <a href="{{ cta_href }}{{ cta_sep }}ref=hero-{{ count }}" class="justify-self-start self-start md:col-start-1 md:row-start-2 rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text }}</a>
+            {{# Tag each slide's link (ref={page}.hero-N) so identical CTAs across slides aren't redundant links, and sign-ups show which slide converted. #}}
+            <a href="{{ (cta_url ?? 'https://projecthq.app/register') | signup_ref('hero', count) }}" class="justify-self-start self-start md:col-start-1 md:row-start-2 rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text }}</a>
           {{ /if }}
         </div>
       </div>

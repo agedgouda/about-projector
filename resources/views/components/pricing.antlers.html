@@ -15,7 +15,7 @@
       {{ /plans }}
     </div>
     <div class="mt-10 max-w-3xl mx-auto text-center">
-      <a href="{{ cta_url ?? '/pricing' }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text ?? "View Full Pricing" }}</a>
+      <a href="{{ (cta_url ?? '/pricing') | signup_ref('pricing') }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text ?? "View Full Pricing" }}</a>
     </div>
   </div>
 </section>

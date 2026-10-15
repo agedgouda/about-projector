@@ -5,7 +5,7 @@
       <div class="text-lg text-projector-graphite mb-10 prose prose-lg prose-projector prose-p:leading-relaxed">{{ description | markdown }}</div>
     {{ /if }}
     <div class="text-center">
-      <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text ?? "Try It Free" }}</a>
+      <a href="{{ (cta_url ?? 'https://projecthq.app/register') | signup_ref('final-cta') }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text ?? "Try It Free" }}</a>
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@
       <div class="mt-6 prose md:prose-lg prose-projector prose-p:leading-relaxed prose-p:text-white prose-li:text-white prose-strong:text-white prose-a:text-white prose-code:text-white prose-li:marker:text-white max-w-none text-white">{{ subhead }}</div>
     {{ /if }}
     {{ if cta_text }}
-      <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="mt-10 inline-block rounded-2xl bg-projector-highlight-400 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-950 hover:bg-projector-highlight-200 transition-colors">{{ cta_text }}</a>
+      <a href="{{ (cta_url ?? 'https://projecthq.app/register') | signup_ref('hero') }}" class="mt-10 inline-block rounded-2xl bg-projector-highlight-400 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-950 hover:bg-projector-highlight-200 transition-colors">{{ cta_text }}</a>
     {{ /if }}
   </div>
   {{ if image || image_note }}

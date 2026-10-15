@@ -16,7 +16,7 @@
       </div>
       {{ if cta_text }}
         <div class="mt-6 text-center">
-          <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text }}</a>
+          <a href="{{ (cta_url ?? 'https://projecthq.app/register') | signup_ref('video-cta') }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text }}</a>
         </div>
       {{ /if }}
     </div>

@@ -3,7 +3,7 @@
     <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-projector-ink mb-3 md:mb-4">{{ headline }}</h1>
       <p class="text-base md:text-lg font-semibold text-projector-ink mb-6 md:mb-12">A Project Management System Built For You</p>
     {{ if cta_text }}
-      <a href="https://projecthq.app/register" class="inline-block rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors mt-8 md:mt-16">{{ cta_text }}</a>
+      <a href="{{ 'https://projecthq.app/register' | signup_ref('hero') }}" class="inline-block rounded-2xl bg-projector-primary-600 px-8 md:px-10 py-3 text-base font-semibold text-white hover:bg-black hover:text-white transition-colors mt-8 md:mt-16">{{ cta_text }}</a>
     {{ /if }}
     {{ if subhead }}
     <p class="mt-6 md:mt-8 text-sm font-bold text-projector-graphite tracking-wide">{{ subhead }}</p>
