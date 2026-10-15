@@ -1,0 +1,88 @@
+title: 'Video Page'
+order: 2
+fields:
+  -
+    handle: headline
+    field:
+      type: text
+      display: Headline
+      default: 'Page headline'
+  -
+    handle: subhead
+    field:
+      type: textarea
+      display: Subhead
+  -
+    handle: cta_text
+    field:
+      type: text
+      display: 'CTA Text'
+      instructions: 'Shown under the main video. Leave blank to hide.'
+  -
+    handle: cta_url
+    field:
+      type: text
+      display: 'CTA Link'
+      instructions: 'Leave blank to link to sign-up.'
+  -
+    handle: more_heading
+    field:
+      type: text
+      display: 'More Videos Heading'
+      instructions: 'Heading above the smaller videos.'
+  -
+    handle: videos
+    field:
+      type: grid
+      display: Videos
+      mode: stacked
+      add_row: 'Add Video'
+      instructions: 'The first video is the main one. Visitors can click any other video to swap it into the main spot.'
+      fields:
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+            validate:
+              - required
+        -
+          handle: caption
+          field:
+            type: text
+            display: Caption
+        -
+          handle: video_url
+          field:
+            type: video
+            display: 'YouTube or Vimeo Link'
+            instructions: 'Use this or Video File.'
+            width: 50
+        -
+          handle: video_file
+          field:
+            type: assets
+            display: 'Video File'
+            instructions: 'Upload an MP4 instead of a link.'
+            container: assets
+            max_files: 1
+            width: 50
+  -
+    handle: template
+    field:
+      type: hidden
+      default: videos
+  -
+    handle: meta_description
+    field:
+      type: textarea
+      display: 'Share Description'
+      instructions: 'Shown under the title when this page is shared in email, Messages or social media. Leave blank to use the site default.'
+      character_limit: 160
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      display: 'Hide from Search Engines'
+      instructions: 'Adds a noindex tag and leaves this page out of the sitemap. Use for empty or private pages.'
+      default: false

@@ -1,0 +1,41 @@
+{{# Main video up top; clicking a smaller one swaps it into the main spot (site.js, [data-videos]). #}}
+<div data-videos>
+  <section class="bg-projector-highlight-200 px-6 pt-8 pb-10 md:pt-10 md:pb-12">
+    <div class="mx-auto max-w-5xl">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl md:whitespace-nowrap font-bold tracking-tight text-projector-ink">{{ headline ?? title }}</h1>
+        {{ if subhead }}
+          <p class="mx-auto mt-4 max-w-3xl text-lg leading-relaxed text-[#4b3d35]">{{ subhead }}</p>
+        {{ /if }}
+      </div>
+      {{# Cap the width so the video's height leaves room for the headline above and the CTA below on one screen. Without a subhead there's ~2.75rem more to give the video. #}}
+      <div data-video-main class="mx-auto mt-6 md:mt-8 {{ subhead ? 'max-w-[max(20rem,calc((100svh_-_21rem)*16/9))]' : 'max-w-[max(20rem,calc((100svh_-_18.25rem)*16/9))]' }} scroll-mt-24">
+        {{ videos limit="1" }}
+          {{ partial:video_item main="true" }}
+        {{ /videos }}
+      </div>
+      {{ if cta_text }}
+        <div class="mt-6 text-center">
+          <a href="{{ cta_url ?? 'https://projecthq.app/register' }}" class="inline-block rounded-2xl bg-projector-primary-700 px-8 md:px-10 py-3 text-base font-semibold text-projector-highlight-200 hover:bg-projector-primary-800 transition-colors">{{ cta_text }}</a>
+        </div>
+      {{ /if }}
+    </div>
+  </section>
+
+  {{ if (videos | length) > 1 }}
+    <section class="bg-projector-highlight-50 px-6 py-12 md:py-16">
+      <div class="mx-auto max-w-5xl">
+        {{ if more_heading }}
+          <h2 class="mb-8 text-2xl md:text-3xl font-semibold text-projector-ink">{{ more_heading }}</h2>
+        {{ /if }}
+        <div class="grid gap-6 sm:grid-cols-2">
+          {{ videos offset="1" }}
+            {{ partial:video_item }}
+          {{ /videos }}
+        </div>
+      </div>
+    </section>
+  {{ /if }}
+
+  {{ partial:scroll_cue }}
+</div>
