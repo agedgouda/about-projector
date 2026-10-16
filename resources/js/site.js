@@ -124,11 +124,13 @@ document.querySelectorAll('[data-videos]').forEach((root) => {
         } else {
             el = document.createElement('video');
             el.src = file;
+            if (item.dataset.poster) el.poster = item.dataset.poster;
             el.controls = true;
             el.autoplay = true;
             el.playsInline = true;
         }
-        el.className = 'h-full w-full';
+        // object-cover fills the 16:9 spot when a recording is slightly off (e.g. 1916×1054) instead of showing black bars.
+        el.className = 'h-full w-full object-cover';
         player.replaceChildren(el);
         player.hidden = false;
         item.querySelector('[data-video-play]').hidden = true;

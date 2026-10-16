@@ -67,6 +67,14 @@ fields:
             container: assets
             max_files: 1
             width: 50
+        -
+          handle: preview_image
+          field:
+            type: assets
+            display: 'Preview Image'
+            instructions: 'Shown in the main spot before the video plays. Use 16:9, e.g. 1920×1080.'
+            container: assets
+            max_files: 1
   -
     handle: template
     field:
