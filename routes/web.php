@@ -11,3 +11,6 @@ Route::statamic('blog', 'blog/index', [
 ]);
 
 Route::get('sitemap.xml', \App\Http\Controllers\SitemapController::class);
+
+// The demo lives in the app; send visitors straight there.
+Route::redirect('demo', 'https://projecthq.app/demo');

@@ -97,12 +97,3 @@ document.querySelectorAll('[data-scroll-cue]').forEach((cue) => {
     update();
 });
 
-
-// Demo page: the embedded app reports its content height so the frame can fit it.
-document.querySelectorAll('[data-demo-frame]').forEach((frame) => {
-    const origin = new URL(frame.src).origin;
-    window.addEventListener('message', (event) => {
-        if (event.origin !== origin || event.data?.type !== 'projector-demo:height') return;
-        frame.style.height = `${event.data.height}px`;
-    });
-});

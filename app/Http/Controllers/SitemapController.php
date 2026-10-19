@@ -13,13 +13,16 @@ class SitemapController extends Controller
     /** Routes defined in routes/web.php rather than as entries. */
     private const EXTRA_PATHS = ['/blog'];
 
+    /** Entry URLs that routes/web.php redirects elsewhere, so they don't belong in the sitemap. */
+    private const REDIRECTED_PATHS = ['/demo'];
+
     public function __invoke(): Response
     {
         $urls = Entry::query()
             ->whereIn('collection', self::COLLECTIONS)
             ->whereStatus('published')
             ->get()
-            ->reject(fn ($entry) => $entry->get('seo_noindex') || ! $entry->url())
+            ->reject(fn ($entry) => $entry->get('seo_noindex') || ! $entry->url() || in_array($entry->url(), self::REDIRECTED_PATHS))
             ->map(fn ($entry) => ['loc' => $entry->absoluteUrl(), 'lastmod' => $entry->lastModified()])
             ->concat(collect(self::EXTRA_PATHS)->map(fn ($path) => ['loc' => url($path), 'lastmod' => null]))
             ->unique('loc')
