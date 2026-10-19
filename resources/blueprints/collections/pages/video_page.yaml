@@ -1,4 +1,4 @@
-title: 'Video Page'
+title: 'Demo Page'
 order: 2
 fields:
   -
@@ -13,68 +13,24 @@ fields:
       type: textarea
       display: Subhead
   -
+    handle: demo_url
+    field:
+      type: text
+      input_type: url
+      display: 'Demo Link'
+      instructions: 'Address of the demo page in the app. Leave blank to use https://projecthq.app/demo.'
+  -
     handle: cta_text
     field:
       type: text
       display: 'CTA Text'
-      instructions: 'Shown under the main video. Leave blank to hide.'
+      instructions: 'Shown under the demo. Leave blank to hide.'
   -
     handle: cta_url
     field:
       type: text
       display: 'CTA Link'
       instructions: 'Leave blank to link to sign-up.'
-  -
-    handle: more_heading
-    field:
-      type: text
-      display: 'More Videos Heading'
-      instructions: 'Heading above the smaller videos.'
-  -
-    handle: videos
-    field:
-      type: grid
-      display: Videos
-      mode: stacked
-      add_row: 'Add Video'
-      instructions: 'The first video is the main one. Visitors can click any other video to swap it into the main spot.'
-      fields:
-        -
-          handle: title
-          field:
-            type: text
-            display: Title
-            validate:
-              - required
-        -
-          handle: caption
-          field:
-            type: text
-            display: Caption
-        -
-          handle: video_url
-          field:
-            type: video
-            display: 'YouTube or Vimeo Link'
-            instructions: 'Use this or Video File.'
-            width: 50
-        -
-          handle: video_file
-          field:
-            type: assets
-            display: 'Video File'
-            instructions: 'Upload an MP4 instead of a link.'
-            container: assets
-            max_files: 1
-            width: 50
-        -
-          handle: preview_image
-          field:
-            type: assets
-            display: 'Preview Image'
-            instructions: 'Shown in the main spot before the video plays. Use 16:9, e.g. 1920×1080.'
-            container: assets
-            max_files: 1
   -
     handle: template
     field:

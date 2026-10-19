@@ -75,8 +75,7 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 // Scroll cue: a down-arrow that stays until the visitor reaches the bottom of the page.
 document.querySelectorAll('[data-scroll-cue]').forEach((cue) => {
     const header = document.getElementById('site-header');
-    // The video page wraps its sections in one [data-videos] element, so step into it.
-    const sections = [...document.querySelectorAll('main > :not([data-videos]), main > [data-videos] > section')];
+    const sections = [...document.querySelectorAll('main > *')];
 
     const update = () => {
         const visible = window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 24;
@@ -98,67 +97,12 @@ document.querySelectorAll('[data-scroll-cue]').forEach((cue) => {
     update();
 });
 
-// Video page: clicking a smaller video swaps it with the main one and starts it playing.
-document.querySelectorAll('[data-videos]').forEach((root) => {
-    const main = root.querySelector('[data-video-main]');
 
-    const stop = (item) => {
-        const player = item.querySelector('[data-video-player]');
-        player.replaceChildren();
-        player.hidden = true;
-        item.querySelector('[data-video-play]').hidden = false;
-    };
-
-    const play = (item) => {
-        const { embed, file } = item.dataset;
-        if (!embed && !file) return;
-        const player = item.querySelector('[data-video-player]');
-        let el;
-        if (embed) {
-            const src = new URL(embed, window.location.href);
-            src.searchParams.set('autoplay', '1');
-            el = document.createElement('iframe');
-            el.src = src.toString();
-            el.allow = 'autoplay; fullscreen; picture-in-picture';
-            el.allowFullscreen = true;
-        } else {
-            el = document.createElement('video');
-            el.src = file;
-            if (item.dataset.poster) el.poster = item.dataset.poster;
-            el.controls = true;
-            el.autoplay = true;
-            el.playsInline = true;
-        }
-        // object-cover fills the 16:9 spot when a recording is slightly off (e.g. 1916×1054) instead of showing black bars.
-        el.className = 'h-full w-full object-cover';
-        player.replaceChildren(el);
-        player.hidden = false;
-        item.querySelector('[data-video-play]').hidden = true;
-    };
-
-    const setMain = (item, isMain) => {
-        item.querySelector('[data-video-stage]').hidden = !isMain;
-        item.querySelector('[data-video-thumb]').hidden = isMain;
-        if (!isMain) stop(item);
-    };
-
-    root.addEventListener('click', (event) => {
-        if (event.target.closest('[data-video-play]')) {
-            play(event.target.closest('[data-video]'));
-            return;
-        }
-        const thumb = event.target.closest('[data-video-thumb]');
-        if (!thumb) return;
-
-        // The current main video takes the clicked one's spot in the grid.
-        const item = thumb.closest('[data-video]');
-        const current = main.querySelector('[data-video]');
-        item.replaceWith(current);
-        main.append(item);
-        setMain(current, false);
-        setMain(item, true);
-        main.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        play(item);
-        item.querySelector('[data-video-play]').focus({ preventScroll: true });
+// Demo page: the embedded app reports its content height so the frame can fit it.
+document.querySelectorAll('[data-demo-frame]').forEach((frame) => {
+    const origin = new URL(frame.src).origin;
+    window.addEventListener('message', (event) => {
+        if (event.origin !== origin || event.data?.type !== 'projector-demo:height') return;
+        frame.style.height = `${event.data.height}px`;
     });
 });
