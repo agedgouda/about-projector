@@ -44,9 +44,10 @@
       <span class="sr-only">Previous slide</span>
       <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
     </button>
-    <div class="flex items-center gap-2">
+    {{# Dots are 24px tap targets; padding + bg-clip-content keeps the visible dot 10px tall (32px wide when active). #}}
+    <div class="flex items-center">
       {{ slides }}
-        <button type="button" data-carousel-dot class="h-2.5 rounded-full transition-all {{ if first }}w-8 bg-projector-primary-600{{ else }}w-2.5 bg-zinc-400 hover:bg-zinc-500{{ /if }}" aria-label="Go to slide {{ count }}" {{ if first }}aria-current="true"{{ /if }}></button>
+        <button type="button" data-carousel-dot class="h-6 p-[7px] bg-clip-content rounded-full transition-all {{ if first }}w-[46px] bg-projector-primary-600{{ else }}w-6 bg-zinc-400 hover:bg-zinc-500{{ /if }}" aria-label="Go to slide {{ count }}" {{ if first }}aria-current="true"{{ /if }}></button>
       {{ /slides }}
     </div>
     <button type="button" data-carousel-next class="rounded-full p-2 text-projector-graphite hover:bg-zinc-200 hover:text-projector-ink transition-colors">

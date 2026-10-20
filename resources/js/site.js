@@ -29,9 +29,9 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 
         dots.forEach((dot, i) => {
             const active = i === current;
-            dot.classList.toggle('w-8', active);
+            dot.classList.toggle('w-[46px]', active);
             dot.classList.toggle('bg-projector-primary-600', active);
-            dot.classList.toggle('w-2.5', !active);
+            dot.classList.toggle('w-6', !active);
             dot.classList.toggle('bg-zinc-400', !active);
             dot.classList.toggle('hover:bg-zinc-500', !active);
             if (active) dot.setAttribute('aria-current', 'true');
