@@ -14,17 +14,18 @@
             <div class="text-[#4b3d35] text-sm leading-relaxed prose prose-sm prose-projector prose-p:text-[#4b3d35] prose-li:text-[#4b3d35] md:col-start-1 md:row-start-1">{{ description }}</div>
           {{ /if }}
           {{ if image }}
+          {{# Resized WebP via Glide; only the first slide's image is high priority since the rest start hidden. #}}
           <div class="w-full md:col-start-2 md:row-start-1 md:row-span-2 md:self-center">
             {{ if image_frame }}
               {{# Monitor drawn in CSS around a plain screenshot: bezel, chin, then stand. #}}
               <div class="rounded-t-[1.25rem] bg-zinc-900 p-[1.5%] shadow-lg">
-                <img src="{{ image:url }}" alt="{{ image:alt ?? '{headline}: Projector app screenshot' }}" class="block w-full h-auto rounded-sm bg-white">
+                <img src="{{ glide:image width="960" fm="webp" }}" srcset="{{ glide:image width="640" fm="webp" }} 640w, {{ glide:image width="960" fm="webp" }} 960w, {{ glide:image width="1440" fm="webp" }} 1440w, {{ glide:image width="1920" fm="webp" }} 1920w" sizes="(min-width: 768px) min(55vw, 960px), calc(100vw - 8rem)" width="{{ image:width }}" height="{{ image:height }}" fetchpriority="{{ first ? 'high' : 'low' }}" alt="{{ image:alt ?? '{headline}: Projector app screenshot' }}" class="block w-full h-auto rounded-sm bg-white">
               </div>
               <div class="aspect-[100/7] rounded-b-[1.25rem] bg-gradient-to-b from-zinc-200 to-zinc-300 shadow-lg"></div>
               <div class="mx-auto h-10 w-[16%] bg-gradient-to-b from-zinc-400 to-zinc-300 [clip-path:polygon(12%_0,88%_0,100%_100%,0_100%)]"></div>
               <div class="mx-auto h-2 w-[30%] rounded-t-sm rounded-b-lg bg-gradient-to-b from-zinc-300 to-zinc-400 shadow-sm"></div>
             {{ else }}
-              <img src="{{ image:url }}" alt="{{ image:alt ?? '{headline}: Projector app screenshot' }}" class="rounded-2xl w-full h-auto shadow-sm">
+              <img src="{{ glide:image width="960" fm="webp" }}" srcset="{{ glide:image width="640" fm="webp" }} 640w, {{ glide:image width="960" fm="webp" }} 960w, {{ glide:image width="1440" fm="webp" }} 1440w, {{ glide:image width="1920" fm="webp" }} 1920w" sizes="(min-width: 768px) min(55vw, 960px), calc(100vw - 8rem)" width="{{ image:width }}" height="{{ image:height }}" fetchpriority="{{ first ? 'high' : 'low' }}" alt="{{ image:alt ?? '{headline}: Projector app screenshot' }}" class="rounded-2xl w-full h-auto shadow-sm">
             {{ /if }}
           </div>
           {{ /if }}
