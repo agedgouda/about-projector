@@ -11,7 +11,7 @@ class SitemapController extends Controller
     private const COLLECTIONS = ['pages', 'blog', 'use_cases'];
 
     /** Routes defined in routes/web.php rather than as entries. */
-    private const EXTRA_PATHS = ['/blog'];
+    private const EXTRA_PATHS = ['/blog', '/login'];
 
     /** Entry URLs that routes/web.php redirects elsewhere, so they don't belong in the sitemap. */
     private const REDIRECTED_PATHS = ['/demo'];
