@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   {{ if is_homepage || !title }}
-    {{ share_title = "Projector | Project Management System" }}
+    {{ share_title = "Projector (projecthq.app) | Project Management System" }}
   {{ else }}
-    {{ share_title = "{title} | Projector Project Management System" }}
+    {{ share_title = "{title} | Projector (projecthq.app)" }}
   {{ /if }}
   {{ share_description = meta_description ?? excerpt ?? summary ?? "The project management tool that does the paperwork, so you can stop taking notes and start taking action." }}
   <title>{{ share_title }}</title>
@@ -16,10 +16,43 @@
   {{ /if }}
   {{ if is_homepage }}
     <script type="application/ld+json">
-      {"@context": "https://schema.org", "@graph": [
-        {"@type": "Organization", "@id": "{{ config:app:url }}/#organization", "name": "Projector", "url": "{{ config:app:url }}", "logo": "{{ config:app:url }}/logo.png"},
-        {"@type": "WebSite", "name": "Projector", "url": "{{ config:app:url }}", "publisher": {"@id": "{{ config:app:url }}/#organization"}}
-      ]}
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "{{ config:app:url }}/#organization",
+          "name": "Projector",
+          "alternateName": ["ProjectHQ", "Projector (projecthq.app)"],
+          "url": "{{ config:app:url }}",
+          "logo": "{{ config:app:url }}/logo.png"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "{{ config:app:url }}/#website",
+          "name": "Projector",
+          "alternateName": ["ProjectHQ", "projecthq.app"],
+          "url": "{{ config:app:url }}",
+          "publisher": {
+            "@id": "{{ config:app:url }}/#organization"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "{{ config:app:url }}/#software",
+          "name": "Projector",
+          "alternateName": "ProjectHQ",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://projecthq.app",
+          "mainEntityOfPage": "{{ config:app:url }}",
+          "description": "Project management system for organizing tasks, meetings, and team workflows.",
+          "publisher": {
+            "@id": "{{ config:app:url }}/#organization"
+          }
+        }
+      ]
+    }
     </script>
   {{ /if }}
   {{ yield:head }}
