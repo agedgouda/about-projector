@@ -146,7 +146,7 @@ fields:
                 type: integer
                 display: 'Seconds Per Slide'
                 instructions: 'How long each slide shows before advancing. Set to 0 to turn off auto-advance.'
-                default: 7
+                default: 10
         testimonials:
           display: Testimonials
           fields:

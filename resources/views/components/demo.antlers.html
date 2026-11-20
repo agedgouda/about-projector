@@ -1,5 +1,5 @@
 {{ if slides }}
-<section class="relative px-16 py-10 bg-projector-highlight-200" data-carousel data-autoplay="{{ autoplay_seconds ?? 7 }}" aria-roledescription="carousel" aria-label="Highlights">
+<section class="relative px-16 py-10 bg-projector-highlight-200" data-carousel data-autoplay="{{ autoplay_seconds ?? 10 }}" aria-roledescription="carousel" aria-label="Highlights">
   <div class="grid">
     {{ slides }}
       <div class="[grid-area:1/1] transition-opacity duration-700 {{ if first }}opacity-100{{ else }}opacity-0 pointer-events-none{{ /if }}" data-slide aria-roledescription="slide" aria-label="{{ count }} of {{ total_results }}" {{ if !first }}aria-hidden="true" inert{{ /if }}>
